@@ -6,7 +6,7 @@ import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons' // Need to create this icon or remove
 import HireMe from '@/components/HireMe' // Need to create
-import lightBulb from '@/public/images/svgs/miscellaneous_icons_1.svg' // Placeholder import, will comment out
+// import lightBulb from '@/public/images/svgs/miscellaneous_icons_1.svg'
 
 // We will use standard generic content where images are missing
 
@@ -16,10 +16,15 @@ export default function Home() {
             <Layout className='pt-0 md:pt-16 sm:pt-8'>
                 <div className="flex items-center justify-between w-full lg:flex-col">
                     <div className='w-1/2 md:w-full'>
-                        {/* Image Placeholder */}
-                        <div className="w-full h-auto bg-gray-400 rounded-lg aspect-[3/4] flex items-center justify-center">
-                            <span className="text-white">Profile Image</span>
-                        </div>
+                        <Image
+                            src="/images/profile-photo.jpg"
+                            alt="Prathamesh Barapatre"
+                            width={500}
+                            height={700}
+                            className="w-full h-auto rounded-2xl md:inline-block md:w-full"
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                     </div>
                     <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
                         <AnimatedText text="Turning Vision Into Reality With Code And Engineering." className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' />
