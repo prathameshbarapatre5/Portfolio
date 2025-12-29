@@ -8,6 +8,8 @@ import { LinkArrow } from '@/components/Icons' // Need to create this icon or re
 import HireMe from '@/components/HireMe' // Need to create
 // import lightBulb from '@/public/images/svgs/miscellaneous_icons_1.svg'
 
+import profilePic from '@/public/images/profile-photo.jpg'
+
 // We will use standard generic content where images are missing
 
 export default function Home() {
@@ -17,7 +19,7 @@ export default function Home() {
                 <div className="flex items-center justify-between w-full lg:flex-col">
                     <div className='w-1/2 md:w-full'>
                         <Image
-                            src="/images/profile-photo.jpg"
+                            src={profilePic}
                             alt="Prathamesh Barapatre"
                             width={500}
                             height={700}
