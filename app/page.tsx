@@ -16,8 +16,8 @@ export default function Home() {
     return (
         <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
             <Layout className='pt-0 md:pt-16 sm:pt-8'>
-                <div className="flex items-center justify-between w-full lg:flex-col">
-                    <div className='w-1/2 md:w-full'>
+                <div className="flex items-center justify-between w-full flex-col lg:flex-row">
+                    <div className='w-full md:w-full lg:w-1/2'>
                         <Image
                             src={profilePic}
                             alt="Prathamesh Barapatre"
@@ -28,12 +28,12 @@ export default function Home() {
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>
-                    <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
-                        <AnimatedText text="Turning Vision Into Reality With Code And Engineering." className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' />
-                        <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>
+                    <div className='w-full lg:w-1/2 flex flex-col items-center lg:items-start self-center lg:text-left lg:pl-6'>
+                        <AnimatedText text="Turning Vision Into Reality With Code And Engineering." className='!text-6xl !text-left xl:!text-5xl lg:!text-6xl md:!text-5xl sm:!text-3xl' />
+                        <p className='my-4 text-base font-medium md:text-sm sm:text-xs text-center lg:text-left'>
                             As a skilled Robotics Engineer and President of NSS Mumbai, I am dedicated to exploring advanced technologies for space exploration. From designing mechanisms to mentoring students, my goal is to push the boundaries of what's possible.
                         </p>
-                        <div className='flex items-center self-start mt-2 lg:self-center'>
+                        <div className='flex items-center self-center lg:self-start mt-2'>
                             <Link href="/resume.pdf" target={"_blank"}
                                 className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light transition-all md:p-2 md:px-4 md:text-base"
                                 distinct-id="resume-btn" // specific ID

@@ -63,42 +63,7 @@ const Projects = () => {
 
                 <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
                     <div className='col-span-12'>
-                        <FeaturedProject
-                            title="Lunar Rover Navigation with ROS & Gazebo"
-                            img="/"
-                            summary="A comprehensive simulation of a lunar rover using ROS and Gazebo. Implemented particle filters for localization and A* for path planning on a lunar terrain map generated from LRO data."
-                            link="#"
-                            github="#"
-                            type="Robotics / Simulation"
-                        />
-                    </div>
-                    <div className='col-span-6 sm:col-span-12'>
-                        <Project
-                            title="Swerve Drive Mechanism"
-                            img="/"
-                            link="#"
-                            github="#"
-                            type="Mechatronics"
-                        />
-                    </div>
-                    <div className='col-span-6 sm:col-span-12'>
-                        <Project
-                            title="Auto-Turret Defense System"
-                            img="/"
-                            link="#"
-                            github="#"
-                            type="Computer Vision"
-                        />
-                    </div>
-                    <div className='col-span-12'>
-                        <FeaturedProject
-                            title="Space Solar Power Station Research"
-                            img="/"
-                            summary="Research and conceptual design of a commercial Low Earth Orbit (LEO) space station and space solar power systems. Presented at National Space Society events."
-                            link="#"
-                            github="#"
-                            type="Space Technology"
-                        />
+                        {/* Projects will be added here later */}
                     </div>
                 </div>
             </Layout>

@@ -82,41 +82,11 @@ const Articles = () => {
             <Layout className='pt-16'>
                 <AnimatedText text="Words Can Change The World!" className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
                 <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
-                    <FeaturedArticle
-                        title="The Future of Commercial Space Stations"
-                        summary="Exploring the economic and technological viability of LEO commercial stations in the post-ISS era."
-                        time="9 min read"
-                        link="#"
-                        img="/"
-                    />
-                    <FeaturedArticle
-                        title="Robotics in Education: Formatting the Future"
-                        summary="How introducing robotics at K12 level impacts STEM adoption and critical thinking skills in students."
-                        time="9 min read"
-                        link="#"
-                        img="/"
-                    />
+                    {/* Articles will be added here later */}
                 </ul>
                 <h2 className='font-bold text-4xl w-full text-center my-32 mt-32'>All Articles</h2>
                 <ul>
-                    <Article
-                        title="Space Solar Power: The Green Energy Solution from Orbit"
-                        date="March 22, 2023"
-                        link="#"
-                        img="/"
-                    />
-                    <Article
-                        title="Understanding Swerve Drive Kinematics"
-                        date="June 10, 2022"
-                        link="#"
-                        img="/"
-                    />
-                    <Article
-                        title="Getting Started with ROS and Gazebo"
-                        date="Jan 15, 2021"
-                        link="#"
-                        img="/"
-                    />
+                    {/* More articles will be added here later */}
                 </ul>
             </Layout>
         </main>
