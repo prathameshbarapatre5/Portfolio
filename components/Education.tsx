@@ -42,22 +42,61 @@ const Education = () => {
                 />
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     <Details
-                        type="MS in Robotics Engineering"
-                        time="Present"
-                        place="Worcester Polytechnic Institute (WPI), USA"
-                        info="Focusing on Advanced Robotics, AI, and Autonomous Systems."
+                        type="Master of Science - MS, Robotics Engineering"
+                        time="Jan 2025 - 2026"
+                        place="Northeastern University"
+                        info={
+                            <div className='flex flex-col gap-2'>
+                                <span>Grade: B+</span>
+                                <div>
+                                    <span className="font-bold">Courses taken:</span>
+                                    <ul className="list-disc ml-5">
+                                        <li>Deep Learning and Neural Networks</li>
+                                        <li>Robot Sensing and Navigation</li>
+                                        <li>Robot Mechanics and Control</li>
+                                        <li>Mobile Robotics</li>
+                                    </ul>
+                                </div>
+                                <span><strong className='font-bold'>Skills:</strong> Robot Operating System (ROS) • Sensor Data Fusion • Convolutional Neural Networks (CNN) • Deep Learning • Gazebo • A* Path Planning • Particle Filter</span>
+                            </div>
+                        }
                     />
                     <Details
-                        type="Bachelor of Engineering in Mechatronics"
-                        time="2016-2020"
-                        place="India"
-                        info="Studied core mechatronics principles including control systems, embedded systems, and mechanical design."
+                        type="Space Studies Program"
+                        time="Jun 2024 - Aug 2024"
+                        place="International Space University"
+                        info={
+                            <div className='flex flex-col gap-2'>
+                                <p>Participated in the intensive eight-week program hosted by Rice University in collaboration with NASA Johnson Space Center, Houston, Texas. The curriculum focused on the intersection of international relations, diverse cultures, and multiple disciplines within the realm of space exploration.</p>
+                                <p>Nominated and Elected to be Class Representative for the Batch of 2024.</p>
+                                <p>Completed 55 core courses encompassing astronomy, astrophysics, space science, space art and culture, engineering, economics, business, management and more.</p>
+                                <span><strong className='font-bold'>Department:</strong> Space Applications</span>
+                                <span><strong className='font-bold'>Project:</strong> Lunar Satellite Navigation: Enhancing Rover Activities for Human Assistance and Infrastructure Development</span>
+                                <span><strong className='font-bold'>Team Project:</strong> Contributed to the development of a white paper on &quot;Smart Transportation,&quot; exploring the application of &quot;Space Technology for Smart Transportation and Mobility&quot;.</span>
+                                <span><strong className='font-bold'>Skills:</strong> International • Interculture • Interdisciplinary</span>
+                            </div>
+                        }
                     />
                     <Details
-                        type="Diploma in Mechanical Engineering"
-                        time="2013-2016"
-                        place="India"
-                        info="Foundation in mechanical engineering principles."
+                        type="Bachelor of Engineering - BE, Mechatronics, Robotics, and Automation Engineering"
+                        time="2018 - 2021"
+                        place="Terna Engineering College"
+                        info={
+                            <div className='flex flex-col gap-2'>
+                                <span><strong className='font-bold'>Skills:</strong> Software Systems • Creative Problem Solving • Object Oriented Design</span>
+                            </div>
+                        }
+                    />
+                    <Details
+                        type="Diploma, Mechanical Engineering"
+                        time="2016 - 2018"
+                        place="Shivajirao S Jondhale College of Engineering"
+                        info={
+                            <div className='flex flex-col gap-2'>
+                                <p>Completed Diploma in Mechanical Engineering</p>
+                                <span><strong className='font-bold'>Skills:</strong> Object Oriented Design</span>
+                            </div>
+                        }
                     />
                 </ul>
             </div>
