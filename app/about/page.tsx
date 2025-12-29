@@ -7,7 +7,7 @@ import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
-import aboutPhoto from '@/public/images/about-photo.png'
+import aboutPhoto from '@/public/images/about-photo.jpg'
 
 const AnimatedNumbers = ({ value }: { value: number }) => {
     const ref = useRef<HTMLSpanElement>(null)
