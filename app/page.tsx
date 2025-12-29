@@ -34,7 +34,7 @@ export default function Home() {
                             As a skilled Robotics Engineer and President of NSS Mumbai, I am dedicated to exploring advanced technologies for space exploration. From designing mechanisms to mentoring students, my goal is to push the boundaries of what's possible.
                         </p>
                         <div className='flex items-center self-center lg:self-start mt-2'>
-                            <Link href="/resume.pdf" target={"_blank"}
+                            <Link href="https://drive.google.com/file/d/1SY4Z-OTDV3ZloRIsB4e7uzu-EGRddMaF/view?usp=sharing" target={"_blank"}
                                 className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light transition-all md:p-2 md:px-4 md:text-base"
                                 distinct-id="resume-btn" // specific ID
                             >
