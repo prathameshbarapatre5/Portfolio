@@ -40,7 +40,7 @@ export default function Home() {
                             >
                                 Resume
                             </Link>
-                            <Link href="mailto:prathmesh.barapatre@example.com" target={"_blank"}
+                            <Link href="mailto:barapatre.p@northeastern.edu" target={"_blank"}
                                 className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
                             >
                                 Contact

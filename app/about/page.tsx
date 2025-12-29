@@ -47,7 +47,7 @@ const About = () => {
                             I believe that design is about more than just making things look pretty – it is about solving problems and creating intuitive, enjoyable experiences for users.
                         </p>
                         <p className='font-medium'>
-                            Whether I am working on a complex swerve drive system, planning a space solar power mission, or mentoring the next generation of engineers, I bring my commitment to design excellence and user-centered thinking to every project I work on.
+                            Whether I am working on a designing and manufacturing Electric Vehicle, planning a space solar power mission, or mentoring the next generation of engineers, I bring my commitment to design excellence and user-centered thinking to every project I work on.
                         </p>
                     </div>
 
