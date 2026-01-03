@@ -2,7 +2,7 @@
 import React from 'react'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowRight, BookOpen, Globe, Mic, Headphones } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, BookOpen, Globe, Mic, Headphones, FileText, Award } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const containerVariants = {
@@ -19,6 +19,66 @@ const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
+
+const PublicationCard = ({ title, conference, year, type, description, link }: any) => {
+    return (
+        <motion.article
+            variants={itemVariants}
+            className='group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300'
+        >
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <div className='relative p-6'>
+                <div className='space-y-4'>
+                    {/* Icon & Badge */}
+                    <div className='flex items-start justify-between'>
+                        <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center border border-gray-200 dark:border-gray-700'>
+                            <FileText className='text-purple-600 dark:text-purple-400' size={20} />
+                        </div>
+                        <span className='px-3 py-1 bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold uppercase tracking-wide'>
+                            {type}
+                        </span>
+                    </div>
+
+                    {/* Title */}
+                    <div>
+                        <h3 className='text-xl font-bold text-dark dark:text-light mb-2 leading-tight'>
+                            {title}
+                        </h3>
+                        <div className='flex flex-wrap items-center gap-3 text-sm text-secondary dark:text-gray-400'>
+                            <div className='flex items-center gap-1.5'>
+                                <Award size={14} />
+                                <span className='font-semibold'>{conference}</span>
+                            </div>
+                            <div className='flex items-center gap-1.5'>
+                                <Calendar size={14} />
+                                <span>{year}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className='text-sm text-secondary dark:text-gray-400 leading-relaxed'>
+                        {description}
+                    </p>
+
+                    {/* Link */}
+                    {link && (
+                        <Link
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 font-semibold hover:gap-3 transition-all text-sm'
+                        >
+                            View Publication
+                            <ArrowRight size={16} />
+                        </Link>
+                    )}
+                </div>
+            </div>
+        </motion.article>
+    )
+}
 
 const SpotifyEmbed = ({ embedUrl, title }: any) => {
     return (
@@ -122,7 +182,51 @@ const MagazineCard = ({ title, description, edition, date, readTime, link, categ
 }
 
 const Articles = () => {
-    // Spotify embedded podcasts with titles
+    // Research Publications
+    const publications = [
+        {
+            title: "Space-based Solar Power Satellite and Assembly using Space Robotics",
+            conference: "SpaceOps 2023",
+            year: "2023",
+            type: "Conference Paper",
+            description: "Presented at SpaceOps 2023 in Dubai, hosted by Mohammed bin Rashid Space Center (MBRSC). This paper showcases a model for sustaining Space-based Solar Power Satellite Systems (SSPSS) using space robotics while collaborating with global space-based service platforms.",
+            link: "#"
+        },
+        {
+            title: "Titan Robotic Mission: Mapping and Sampling of Land and Lake",
+            conference: "SpaceOps 2023",
+            year: "2023",
+            type: "Conference Paper",
+            description: "Presented at SpaceOps 2023 in Dubai. This research showcases an innovative rover mission concept for Titan to map and collect samples from its sandy surface and methane lakes, which experts speculate could host life in hydrocarbon form.",
+            link: "#"
+        },
+        {
+            title: "Lunar Mining and Mapping using Multipurpose Autonomous Rover",
+            conference: "72nd International Astronautical Conference (IAC)",
+            year: "2021",
+            type: "Conference Paper",
+            description: "Published and presented at IAC 2021. This paper explores autonomous rover technology for lunar resource extraction and surface mapping, addressing key challenges in lunar exploration and resource utilization.",
+            link: "#"
+        },
+        {
+            title: "Titan Exploration using Autonomous Droneboat with Sample Analysis and Visual Perspective",
+            conference: "72nd International Astronautical Conference (IAC)",
+            year: "2021",
+            type: "Conference Paper",
+            description: "Presented at IAC 2021. This research proposes an innovative autonomous droneboat design for exploring Titan's methane lakes, incorporating sample analysis capabilities and advanced visual sensing systems.",
+            link: "#"
+        },
+        {
+            title: "Lunar Cave Exploration using Autonomous Rover Sample Collection and Analysis",
+            conference: "72nd International Astronautical Conference (IAC)",
+            year: "2021",
+            type: "Conference Paper & Poster",
+            description: "Published paper and interactive poster presented at IAC 2021. This work focuses on autonomous exploration of lunar caves, including sample collection and in-situ analysis for potential habitation and scientific discovery.",
+            link: "#"
+        }
+    ];
+
+    // Spotify embedded podcasts
     const spotifyEmbeds = [
         {
             title: "Episode 1: Space Exploration Insights",
@@ -195,8 +299,50 @@ const Articles = () => {
                         Publications & <span className='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Media</span>
                     </h1>
                     <p className='text-secondary dark:text-gray-400 text-lg max-w-3xl mx-auto'>
-                        Podcasts, magazines, and articles exploring space exploration, robotics, and technology
+                        Research papers, podcasts, magazines, and articles exploring space exploration, robotics, and technology
                     </p>
+                </motion.div>
+
+                {/* Research Publications Section */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className='mb-20'
+                >
+                    <div className='flex items-center gap-3 mb-8'>
+                        <FileText className='text-purple-600 dark:text-purple-400' size={32} />
+                        <h2 className='text-3xl font-bold text-dark dark:text-light'>
+                            Research <span className='text-purple-600 dark:text-purple-400'>Publications</span>
+                        </h2>
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className='mb-8 p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-gray-200 dark:border-gray-800'
+                    >
+                        <div className='flex items-start gap-4'>
+                            <div className='text-4xl'>📄</div>
+                            <div>
+                                <h3 className='text-xl font-bold mb-2 text-dark dark:text-light'>
+                                    Academic Contributions
+                                </h3>
+                                <p className='text-secondary dark:text-gray-400 leading-relaxed'>
+                                    My research focuses on autonomous robotics for planetary exploration, space-based systems, and 
+                                    advanced technologies for deep space missions. These papers have been presented at premier 
+                                    international conferences including SpaceOps and the International Astronautical Congress (IAC).
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                        {publications.map((pub, index) => (
+                            <PublicationCard key={index} {...pub} />
+                        ))}
+                    </div>
                 </motion.div>
 
                 {/* Podcasts Section */}
@@ -241,7 +387,6 @@ const Articles = () => {
                         ))}
                     </div>
 
-                    {/* Listen More CTA */}
                     <motion.div
                         variants={itemVariants}
                         className='mt-8 text-center'
@@ -301,78 +446,38 @@ const Articles = () => {
                     ))}
                 </motion.div>
 
-                {/* Additional Info Section */}
+                {/* Connect Section */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8 }}
-                    className='space-y-8'
+                    className='text-center p-8 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800'
                 >
-                    {/* Writing & Contributions */}
-                    <div className='p-8 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800'>
-                        <div className='flex items-start gap-4 mb-6'>
-                            <BookOpen className='text-primary dark:text-primaryDark' size={32} />
-                            <div>
-                                <h3 className='text-2xl font-bold mb-2 text-dark dark:text-light'>
-                                    Content Creation & Media
-                                </h3>
-                                <p className='text-secondary dark:text-gray-400'>
-                                    I regularly create educational content through podcasts, articles, and magazine publications as part 
-                                    of my role at NSS Mumbai. My work focuses on making space exploration accessible and inspiring future 
-                                    generations of engineers and scientists.
-                                </p>
-                            </div>
-                        </div>
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-gray-200 dark:border-gray-800'>
-                            <div>
-                                <h4 className='font-semibold mb-2 text-dark dark:text-light'>Content Focus:</h4>
-                                <ul className='space-y-1 text-sm text-secondary dark:text-gray-400'>
-                                    <li>• Space Robotics & Automation</li>
-                                    <li>• Lunar Exploration Technologies</li>
-                                    <li>• Space Settlement & Colonization</li>
-                                    <li>• STEM Education & Mentorship</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className='font-semibold mb-2 text-dark dark:text-light'>Media Platforms:</h4>
-                                <ul className='space-y-1 text-sm text-secondary dark:text-gray-400'>
-                                    <li>• NSS Mumbai Podcast (Spotify)</li>
-                                    <li>• CosmicWeb Magazine</li>
-                                    <li>• NSS Mumbai Newsletter</li>
-                                    <li>• Educational Webinars</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Connect Section */}
-                    <div className='text-center p-8 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800'>
-                        <Globe className='mx-auto text-primary dark:text-primaryDark mb-4' size={48} />
-                        <h3 className='text-2xl font-bold mb-3 text-dark dark:text-light'>
-                            Stay Connected
-                        </h3>
-                        <p className='text-secondary dark:text-gray-400 mb-6 max-w-2xl mx-auto'>
-                            Follow NSS Mumbai for the latest podcasts, space news, events, and magazine releases
-                        </p>
-                        <div className='flex justify-center gap-4 flex-wrap'>
-                            <Link
-                                href="https://www.nss-mumbai.org"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className='inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg'
-                            >
-                                Visit NSS Mumbai
-                                <ArrowRight size={18} />
-                            </Link>
-                            <Link
-                                href="https://www.linkedin.com/in/prathmesh-barapatre/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className='inline-flex items-center gap-2 px-6 py-3 border-2 border-dark dark:border-light text-dark dark:text-light hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark rounded-lg font-semibold transition-all'
-                            >
-                                Connect on LinkedIn
-                            </Link>
-                        </div>
+                    <Globe className='mx-auto text-primary dark:text-primaryDark mb-4' size={48} />
+                    <h3 className='text-2xl font-bold mb-3 text-dark dark:text-light'>
+                        Stay Connected
+                    </h3>
+                    <p className='text-secondary dark:text-gray-400 mb-6 max-w-2xl mx-auto'>
+                        Follow my research and media work across various platforms
+                    </p>
+                    <div className='flex justify-center gap-4 flex-wrap'>
+                        <Link
+                            href="https://www.linkedin.com/in/prathmesh-barapatre/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg'
+                        >
+                            View LinkedIn Profile
+                            <ArrowRight size={18} />
+                        </Link>
+                        <Link
+                            href="https://www.nss-mumbai.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 px-6 py-3 border-2 border-dark dark:border-light text-dark dark:text-light hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark rounded-lg font-semibold transition-all'
+                        >
+                            Visit NSS Mumbai
+                        </Link>
                     </div>
                 </motion.div>
             </Layout>
