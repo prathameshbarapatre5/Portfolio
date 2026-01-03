@@ -198,6 +198,15 @@ const Projects = () => {
                     {/* Regular Projects Grid */}
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                         <Project
+                            type="Robotics • ROS 2"
+                            title="Robot Sensing and Navigation"
+                            summary="Comprehensive coursework covering ROS 2, sensor integration (GPS, IMU), GNSS data analysis, dead reckoning navigation, and computer vision for camera calibration and image mosaicing. Northeastern University EECE5554."
+                            icon="🤖"
+                            link="https://github.com/prathameshbarapatre5/Robot-Sensing-and-Navigation"
+                            github="https://github.com/prathameshbarapatre5/Robot-Sensing-and-Navigation"
+                            tags={["ROS 2", "Python", "MATLAB", "GPS", "IMU", "Computer Vision"]}
+                        />
+                        <Project
                             type="Robotics • Kinematics"
                             title="UR3 Inverse Kinematics Simulation"
                             summary="6-DOF UR3 robot simulation implementing numerical inverse kinematics using Newton-Raphson with DLS and task-space trajectory control built from scratch."
