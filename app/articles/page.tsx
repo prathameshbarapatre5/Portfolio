@@ -2,7 +2,7 @@
 import React from 'react'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowRight, BookOpen, Globe, Mic, Headphones, FileText, Award, ExternalLink } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, BookOpen, Globe, Mic, Headphones } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const containerVariants = {
@@ -19,74 +19,6 @@ const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
-
-const PublicationCard = ({ title, conference, year, type, description, link, featured }: any) => {
-    return (
-        <motion.article
-            variants={itemVariants}
-            className={`group relative overflow-hidden rounded-xl border ${featured ? 'border-purple-500/50 dark:border-purple-400/50' : 'border-gray-200 dark:border-gray-800'} bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300 ${featured ? 'md:col-span-2' : ''}`}
-        >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-            <div className={`relative ${featured ? 'p-8' : 'p-6'}`}>
-                <div className='space-y-4'>
-                    {/* Icon & Badge */}
-                    <div className='flex items-start justify-between'>
-                        <div className={`${featured ? 'w-14 h-14' : 'w-12 h-12'} rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center border border-gray-200 dark:border-gray-700`}>
-                            <FileText className='text-purple-600 dark:text-purple-400' size={featured ? 24 : 20} />
-                        </div>
-                        <div className='flex gap-2'>
-                            {featured && (
-                                <span className='px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-700 dark:text-yellow-400 rounded-full text-xs font-semibold uppercase tracking-wide border border-yellow-500/30'>
-                                    Featured
-                                </span>
-                            )}
-                            <span className='px-3 py-1 bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold uppercase tracking-wide'>
-                                {type}
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Title */}
-                    <div>
-                        <h3 className={`${featured ? 'text-2xl' : 'text-xl'} font-bold text-dark dark:text-light mb-2 leading-tight`}>
-                            {title}
-                        </h3>
-                        <div className='flex flex-wrap items-center gap-3 text-sm text-secondary dark:text-gray-400'>
-                            <div className='flex items-center gap-1.5'>
-                                <Award size={14} />
-                                <span className='font-semibold'>{conference}</span>
-                            </div>
-                            <div className='flex items-center gap-1.5'>
-                                <Calendar size={14} />
-                                <span>{year}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className={`${featured ? 'text-base' : 'text-sm'} text-secondary dark:text-gray-400 leading-relaxed`}>
-                        {description}
-                    </p>
-
-                    {/* Link */}
-                    {link && (
-                        <Link
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className='inline-flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg text-sm'
-                        >
-                            <ExternalLink size={16} />
-                            View Publication
-                            <ArrowRight size={16} />
-                        </Link>
-                    )}
-                </div>
-            </div>
-        </motion.article>
-    )
-}
 
 const SpotifyEmbed = ({ embedUrl, title }: any) => {
     return (
@@ -190,59 +122,6 @@ const MagazineCard = ({ title, description, edition, date, readTime, link, categ
 }
 
 const Articles = () => {
-    // Research Publications
-    const publications = [
-        {
-            title: "Smart Transportation for Terrestrial Flooding and Lunar Search and Rescue: Innovative Approaches to Environmental Assessment and Funding for Space Sustainability",
-            conference: "75th International Astronautical Congress (IAC)",
-            year: "2024",
-            type: "White Paper",
-            description: "Published through International Space University (ISU SSP 2024). This comprehensive white paper explores dual-use smart transportation technologies for disaster response on Earth and the Moon. Part one addresses flood mitigation in urban areas, while part two proposes advanced lunar Search and Rescue operations using AI-equipped spacesuits, pressurized rovers, and robust communication networks for sustainable human lunar presence.",
-            link: "https://isulibrary.isunet.edu/index.php?lvl=notice_display&id=12066",
-            featured: true
-        },
-        {
-            title: "Space-based Solar Power Satellite and Assembly using Space Robotics",
-            conference: "SpaceOps 2023",
-            year: "2023",
-            type: "Conference Paper",
-            description: "Presented at SpaceOps 2023 in Dubai, hosted by Mohammed bin Rashid Space Center (MBRSC). This paper showcases a model for sustaining Space-based Solar Power Satellite Systems (SSPSS) using space robotics while collaborating with global space-based service platforms.",
-            link: "https://star.spaceops.org/2023/user_manudownload.php?doc=519__89sqyus0.pdf"
-        },
-        {
-            title: "Titan Robotic Mission: Mapping and Sampling of Land and Lake",
-            conference: "SpaceOps 2023",
-            year: "2023",
-            type: "Conference Paper",
-            description: "Presented at SpaceOps 2023 in Dubai. This research showcases an innovative rover mission concept for Titan to map and collect samples from its sandy surface and methane lakes, which experts speculate could host life in hydrocarbon form.",
-            link: "https://star.spaceops.org/2023/user_manudownload.php?doc=371__0s5sq3vn.pdf"
-        },
-        {
-            title: "Lunar Mining and Mapping using Multipurpose Autonomous Rover",
-            conference: "72nd International Astronautical Conference (IAC)",
-            year: "2021",
-            type: "Conference Paper",
-            description: "Published and presented at IAC 2021. This paper explores autonomous rover technology for lunar resource extraction and surface mapping, addressing key challenges in lunar exploration and resource utilization.",
-            link: "https://dl.iafastro.directory/event/IAC-2021/paper/66095/"
-        },
-        {
-            title: "Titan Exploration using Autonomous Droneboat with Sample Analysis and Visual Perspective",
-            conference: "72nd International Astronautical Conference (IAC)",
-            year: "2021",
-            type: "Conference Paper",
-            description: "Presented at IAC 2021. This research proposes an innovative autonomous droneboat design for exploring Titan's methane lakes, incorporating sample analysis capabilities and advanced visual sensing systems.",
-            link: "https://dl.iafastro.directory/event/IAC-2021/paper/66117/"
-        },
-        {
-            title: "Lunar Cave Exploration using Autonomous Rover Sample Collection and Analysis",
-            conference: "72nd International Astronautical Conference (IAC)",
-            year: "2021",
-            type: "Conference Paper & Poster",
-            description: "Published paper and interactive poster presented at IAC 2021. This work focuses on autonomous exploration of lunar caves, including sample collection and in-situ analysis for potential habitation and scientific discovery.",
-            link: "https://dl.iafastro.directory/event/IAC-2021/paper/66112/"
-        }
-    ];
-
     // Spotify embedded podcasts
     const spotifyEmbeds = [
         {
@@ -313,54 +192,11 @@ const Articles = () => {
                     className='mb-16 text-center'
                 >
                     <h1 className='text-5xl lg:text-6xl font-bold mb-4'>
-                        Publications & <span className='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Media</span>
+                        Articles & <span className='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Media</span>
                     </h1>
                     <p className='text-secondary dark:text-gray-400 text-lg max-w-3xl mx-auto'>
-                        Research papers, podcasts, magazines, and articles exploring space exploration, robotics, and technology
+                        Podcasts and magazines exploring space exploration, robotics, and technology
                     </p>
-                </motion.div>
-
-                {/* Research Publications Section */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className='mb-20'
-                >
-                    <div className='flex items-center gap-3 mb-8'>
-                        <FileText className='text-purple-600 dark:text-purple-400' size={32} />
-                        <h2 className='text-3xl font-bold text-dark dark:text-light'>
-                            Research <span className='text-purple-600 dark:text-purple-400'>Publications</span>
-                        </h2>
-                    </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className='mb-8 p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-gray-200 dark:border-gray-800'
-                    >
-                        <div className='flex items-start gap-4'>
-                            <div className='text-4xl'>📄</div>
-                            <div>
-                                <h3 className='text-xl font-bold mb-2 text-dark dark:text-light'>
-                                    Academic Contributions
-                                </h3>
-                                <p className='text-secondary dark:text-gray-400 leading-relaxed'>
-                                    My research focuses on autonomous robotics for planetary exploration, space-based systems, smart 
-                                    transportation for disaster response, and advanced technologies for deep space missions. These papers 
-                                    have been presented at premier international conferences including IAC and SpaceOps, with full PDFs 
-                                    available through official repositories.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                        {publications.map((pub, index) => (
-                            <PublicationCard key={index} {...pub} />
-                        ))}
-                    </div>
                 </motion.div>
 
                 {/* Podcasts Section */}
@@ -476,7 +312,7 @@ const Articles = () => {
                         Stay Connected
                     </h3>
                     <p className='text-secondary dark:text-gray-400 mb-6 max-w-2xl mx-auto'>
-                        Follow my research and media work across various platforms
+                        Follow my media work and space advocacy initiatives across various platforms
                     </p>
                     <div className='flex justify-center gap-4 flex-wrap'>
                         <Link

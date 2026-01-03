@@ -60,6 +60,7 @@ const Navbar = () => {
                     <CustomLink href="/" title="Home" />
                     <CustomLink href="/about" title="About" />
                     <CustomLink href="/projects" title="Projects" />
+                    <CustomLink href="/publications" title="Publications" />
                     <CustomLink href="/articles" title="Articles" />
                 </nav>
 
@@ -119,6 +120,7 @@ const Navbar = () => {
                             <MobileLink href="/" title="Home" toggle={handleClick} />
                             <MobileLink href="/about" title="About" toggle={handleClick} />
                             <MobileLink href="/projects" title="Projects" toggle={handleClick} />
+                            <MobileLink href="/publications" title="Publications" toggle={handleClick} />
                             <MobileLink href="/articles" title="Articles" toggle={handleClick} />
 
                             <div className="flex items-center gap-6 mt-4 pt-4 border-t border-gray-200 dark:border-gray-800 w-full justify-center">
