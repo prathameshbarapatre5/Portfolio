@@ -2,7 +2,7 @@
 import React from 'react'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowRight, BookOpen, Globe, Mic, Headphones, FileText, Award } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, BookOpen, Globe, Mic, Headphones, FileText, Award, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const containerVariants = {
@@ -75,8 +75,9 @@ const PublicationCard = ({ title, conference, year, type, description, link, fea
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className='inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 font-semibold hover:gap-3 transition-all text-sm'
+                            className='inline-flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg text-sm'
                         >
+                            <ExternalLink size={16} />
                             View Publication
                             <ArrowRight size={16} />
                         </Link>
@@ -197,7 +198,7 @@ const Articles = () => {
             year: "2024",
             type: "White Paper",
             description: "Published through International Space University (ISU SSP 2024). This comprehensive white paper explores dual-use smart transportation technologies for disaster response on Earth and the Moon. Part one addresses flood mitigation in urban areas, while part two proposes advanced lunar Search and Rescue operations using AI-equipped spacesuits, pressurized rovers, and robust communication networks for sustainable human lunar presence.",
-            link: "#",
+            link: "https://isulibrary.isunet.edu/index.php?lvl=notice_display&id=12066",
             featured: true
         },
         {
@@ -206,7 +207,7 @@ const Articles = () => {
             year: "2023",
             type: "Conference Paper",
             description: "Presented at SpaceOps 2023 in Dubai, hosted by Mohammed bin Rashid Space Center (MBRSC). This paper showcases a model for sustaining Space-based Solar Power Satellite Systems (SSPSS) using space robotics while collaborating with global space-based service platforms.",
-            link: "#"
+            link: "https://star.spaceops.org/2023/user_manudownload.php?doc=519__89sqyus0.pdf"
         },
         {
             title: "Titan Robotic Mission: Mapping and Sampling of Land and Lake",
@@ -214,7 +215,7 @@ const Articles = () => {
             year: "2023",
             type: "Conference Paper",
             description: "Presented at SpaceOps 2023 in Dubai. This research showcases an innovative rover mission concept for Titan to map and collect samples from its sandy surface and methane lakes, which experts speculate could host life in hydrocarbon form.",
-            link: "#"
+            link: "https://star.spaceops.org/2023/user_manudownload.php?doc=371__0s5sq3vn.pdf"
         },
         {
             title: "Lunar Mining and Mapping using Multipurpose Autonomous Rover",
@@ -222,7 +223,7 @@ const Articles = () => {
             year: "2021",
             type: "Conference Paper",
             description: "Published and presented at IAC 2021. This paper explores autonomous rover technology for lunar resource extraction and surface mapping, addressing key challenges in lunar exploration and resource utilization.",
-            link: "#"
+            link: "https://dl.iafastro.directory/event/IAC-2021/paper/66095/"
         },
         {
             title: "Titan Exploration using Autonomous Droneboat with Sample Analysis and Visual Perspective",
@@ -230,7 +231,7 @@ const Articles = () => {
             year: "2021",
             type: "Conference Paper",
             description: "Presented at IAC 2021. This research proposes an innovative autonomous droneboat design for exploring Titan's methane lakes, incorporating sample analysis capabilities and advanced visual sensing systems.",
-            link: "#"
+            link: "https://dl.iafastro.directory/event/IAC-2021/paper/66117/"
         },
         {
             title: "Lunar Cave Exploration using Autonomous Rover Sample Collection and Analysis",
@@ -238,7 +239,7 @@ const Articles = () => {
             year: "2021",
             type: "Conference Paper & Poster",
             description: "Published paper and interactive poster presented at IAC 2021. This work focuses on autonomous exploration of lunar caves, including sample collection and in-situ analysis for potential habitation and scientific discovery.",
-            link: "#"
+            link: "https://dl.iafastro.directory/event/IAC-2021/paper/66112/"
         }
     ];
 
@@ -348,7 +349,8 @@ const Articles = () => {
                                 <p className='text-secondary dark:text-gray-400 leading-relaxed'>
                                     My research focuses on autonomous robotics for planetary exploration, space-based systems, smart 
                                     transportation for disaster response, and advanced technologies for deep space missions. These papers 
-                                    have been presented at premier international conferences including IAC and SpaceOps.
+                                    have been presented at premier international conferences including IAC and SpaceOps, with full PDFs 
+                                    available through official repositories.
                                 </p>
                             </div>
                         </div>
