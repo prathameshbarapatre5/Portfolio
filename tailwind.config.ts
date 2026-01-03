@@ -9,42 +9,42 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-                circularLight:
-                    "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)",
-
-                circularDark:
-                    "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 100px)",
-
-                circularLightLg:
-                    "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 80px)",
-
-                circularDarkLg:
-                    "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 80px)",
-
-                circularLightMd:
-                    "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 60px)",
-
-                circularDarkMd:
-                    "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 60px)",
-
-                circularLightSm:
-                    "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 40px)",
-
-                circularDarkSm:
-                    "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 8px,#1b1b1b 40px)",
-            },
             colors: {
-                dark: "#1b1b1b",
-                light: "#f5f5f5",
-                primary: "#B63E96",
-                primaryDark: "#58E6D9",
+                dark: "#0f172a",
+                light: "#ffffff",
+                primary: "#3b82f6",
+                primaryDark: "#60a5fa",
+                secondary: "#64748b",
+                accent: "#06b6d4",
+            },
+            fontFamily: {
+                sans: ['var(--font-mont)', 'system-ui', 'sans-serif'],
             },
             animation: {
-                'spin-slow': 'spin 8s linear infinite',
+                'fade-in': 'fadeIn 0.6s ease-in-out',
+                'slide-up': 'slideUp 0.6s ease-out',
+                'slide-down': 'slideDown 0.6s ease-out',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+                slideUp: {
+                    '0%': { transform: 'translateY(20px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                    '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+            },
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'grid-pattern': 'linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px)',
+            },
+            backgroundSize: {
+                'grid': '40px 40px',
             },
         },
     },

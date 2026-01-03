@@ -1,93 +1,158 @@
 "use client";
-import AnimatedText from '@/components/AnimatedText'
+import React from 'react'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
-import React, { useRef } from 'react'
-import { motion, useMotionValue } from 'framer-motion'
+import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-const FramerImage = motion.div // Using a div placeholder instead of Image for simplicity in animation component
-
-const MovingImg = ({ title, img, link }: any) => {
-    const x = useMotionValue(0)
-    const y = useMotionValue(0)
-    const imgRef = useRef<HTMLDivElement>(null)
-
-    function handleMouse(event: any) {
-        if (imgRef.current) {
-            imgRef.current.style.display = 'inline-block'
-            x.set(event.pageX)
-            y.set(-10)
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15
         }
     }
+};
 
-    function handleMouseLeave(event: any) {
-        if (imgRef.current) {
-            imgRef.current.style.display = 'none'
-            x.set(0)
-            y.set(0)
-        }
-    }
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
 
+const ArticleCard = ({ title, summary, date, readTime, link, category }: any) => {
     return (
-        <Link href={link} target="_blank"
-            onMouseMove={handleMouse}
-            onMouseLeave={handleMouseLeave}
+        <motion.article
+            variants={itemVariants}
+            className='group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300'
         >
-            <h2 className='capitalize text-xl font-semibold hover:underline'>{title}</h2>
-            <FramerImage
-                style={{ x: x, y: y }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
-                ref={imgRef} className='z-10 w-96 h-auto hidden absolute rounded-lg bg-gray-400 p-2'
-            >
-                <div className="w-full h-48 bg-gray-500 text-white flex items-center justify-center">Article Image</div>
-            </FramerImage>
-        </Link>
-    )
-}
+            {/* Background Gradient on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-const Article = ({ img, title, date, link }: any) => {
-    return (
-        <motion.li
-            initial={{ y: 200 }}
-            whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
-            viewport={{ once: true }}
-            className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light sm:flex-col'
-        >
-            <MovingImg title={title} img={img} link={link} />
-            <span className='text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm'>{date}</span>
-        </motion.li>
-    )
-}
+            <div className='relative p-6 lg:p-8'>
+                <div className='space-y-4'>
+                    {/* Category Badge */}
+                    <span className='inline-block px-3 py-1 bg-primary/10 dark:bg-primaryDark/10 text-primary dark:text-primaryDark rounded-full text-xs font-semibold uppercase tracking-wide'>
+                        {category}
+                    </span>
 
-const FeaturedArticle = ({ img, title, time, summary, link }: any) => {
-    return (
-        <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light'>
-            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light' />
-            <Link href={link} target="_blank" className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
-                <div className="w-full h-auto bg-gray-400 aspect-[2/1] flex items-center justify-center text-white">Featured Image</div>
-            </Link>
-            <Link href={link} target="_blank">
-                <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg'>{title}</h2>
-            </Link>
-            <p className='text-sm mb-2'>{summary}</p>
-            <span className='text-primary font-semibold dark:text-primaryDark'>{time}</span>
-        </li>
+                    {/* Title */}
+                    <Link href={link} target="_blank" rel="noopener noreferrer">
+                        <h2 className='text-2xl font-bold text-dark dark:text-light hover:text-primary dark:hover:text-primaryDark transition-colors line-clamp-2'>
+                            {title}
+                        </h2>
+                    </Link>
+
+                    {/* Summary */}
+                    <p className='text-secondary dark:text-gray-400 leading-relaxed line-clamp-3'>
+                        {summary}
+                    </p>
+
+                    {/* Meta Information */}
+                    <div className='flex items-center gap-4 text-sm text-secondary dark:text-gray-500 pt-2'>
+                        <div className='flex items-center gap-1.5'>
+                            <Calendar size={16} />
+                            <span>{date}</span>
+                        </div>
+                        <div className='flex items-center gap-1.5'>
+                            <Clock size={16} />
+                            <span>{readTime} min read</span>
+                        </div>
+                    </div>
+
+                    {/* Read More Link */}
+                    <Link
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='inline-flex items-center gap-2 text-primary dark:text-primaryDark font-semibold hover:gap-3 transition-all pt-2'
+                    >
+                        Read Article
+                        <ArrowRight size={18} />
+                    </Link>
+                </div>
+            </div>
+        </motion.article>
     )
 }
 
 const Articles = () => {
+    // Sample articles data - replace with your actual articles
+    const articles = [
+        {
+            title: "The Future of Robotics in Space Exploration",
+            summary: "Exploring how advanced robotics and AI are revolutionizing space missions and enabling unprecedented discoveries beyond Earth's orbit.",
+            date: "Jan 2025",
+            readTime: 8,
+            category: "Space Technology",
+            link: "#"
+        },
+        {
+            title: "Building Autonomous Systems: Lessons Learned",
+            summary: "A comprehensive guide to designing and implementing autonomous robotic systems, from sensor integration to decision-making algorithms.",
+            date: "Dec 2024",
+            readTime: 12,
+            category: "Robotics",
+            link: "#"
+        },
+        {
+            title: "Mechatronics Design Principles for Modern Engineers",
+            summary: "Essential principles and best practices for integrating mechanical, electrical, and software systems in modern engineering projects.",
+            date: "Nov 2024",
+            readTime: 10,
+            category: "Engineering",
+            link: "#"
+        }
+    ];
+
     return (
-        <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
+        <main className='w-full min-h-screen flex flex-col items-center justify-center py-20'>
             <Layout className='pt-16'>
-                <AnimatedText text="Words Can Change The World!" className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
-                <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
-                    {/* Articles will be added here later */}
-                </ul>
-                <h2 className='font-bold text-4xl w-full text-center my-32 mt-32'>All Articles</h2>
-                <ul>
-                    {/* More articles will be added here later */}
-                </ul>
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className='mb-16'
+                >
+                    <h1 className='text-5xl lg:text-6xl font-bold text-center mb-4'>
+                        My <span className='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Articles</span>
+                    </h1>
+                    <p className='text-center text-secondary dark:text-gray-400 text-lg max-w-2xl mx-auto'>
+                        Thoughts, insights, and experiences from my journey in robotics and engineering
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className='grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10'
+                >
+                    {articles.map((article, index) => (
+                        <ArticleCard key={index} {...article} />
+                    ))}
+                </motion.div>
+
+                {/* Coming Soon Message */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className='text-center mt-16 p-8 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800'
+                >
+                    <p className='text-secondary dark:text-gray-400 text-lg'>
+                        More articles coming soon! Follow me on{' '}
+                        <Link
+                            href="https://www.linkedin.com/in/prathmesh-barapatre/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='text-primary dark:text-primaryDark font-semibold hover:underline'
+                        >
+                            LinkedIn
+                        </Link>
+                        {' '}for updates.
+                    </p>
+                </motion.div>
             </Layout>
         </main>
     )

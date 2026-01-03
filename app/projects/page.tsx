@@ -1,71 +1,208 @@
 "use client";
 import React from 'react'
-import Head from 'next/head'
 import Layout from '@/components/Layout'
-import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
-import Image from 'next/image'
-import { Github } from 'lucide-react'
+import { Github, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-const FramerImage = motion(Image)
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
 
 const FeaturedProject = ({ type, title, summary, img, link, github }: any) => {
     return (
-        <article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4'>
-            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl xs:-right-2 xs:h-[102%] xs:w-[100%] xs:rounded-[1.5rem]' />
-            <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full'>
-                <div className="w-full h-auto bg-gray-400 aspect-[16/9] flex items-center justify-center text-white">Project Image</div>
-            </Link>
+        <motion.article
+            variants={itemVariants}
+            className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg hover:shadow-2xl transition-all duration-300'
+        >
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            <div className='w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6'>
-                <span className='text-primary font-medium text-xl dark:text-primaryDark xs:text-base'>{type}</span>
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w-full text-left text-4xl font-bold dark:text-light sm:text-sm'>{title}</h2>
-                </Link>
-                <p className='my-2 font-medium text-dark dark:text-light sm:text-sm'>{summary}</p>
-                <div className='mt-2 flex items-center'>
-                    <Link href={github} target="_blank" className='w-10'><Github className="dark:text-light" /></Link>
-                    <Link href={link} target="_blank" className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light sm:px-4 sm:text-base'>Visit Project</Link>
+            <div className='relative p-8 lg:p-10'>
+                <div className='flex flex-col lg:flex-row gap-8'>
+                    {/* Image Placeholder */}
+                    <div className='w-full lg:w-1/2'>
+                        <Link href={link} target="_blank" rel="noopener noreferrer">
+                            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 aspect-video flex items-center justify-center group-hover:scale-105 transition-transform duration-300 border border-gray-200 dark:border-gray-700">
+                                <span className='text-6xl'>🤖</span>
+                            </div>
+                        </Link>
+                    </div>
+
+                    {/* Content */}
+                    <div className='w-full lg:w-1/2 flex flex-col justify-center space-y-4'>
+                        <span className='text-primary dark:text-primaryDark font-semibold text-sm uppercase tracking-wide'>{type}</span>
+                        <Link href={link} target="_blank" rel="noopener noreferrer">
+                            <h2 className='text-3xl font-bold text-dark dark:text-light hover:text-primary dark:hover:text-primaryDark transition-colors'>
+                                {title}
+                            </h2>
+                        </Link>
+                        <p className='text-secondary dark:text-gray-400 leading-relaxed'>
+                            {summary}
+                        </p>
+                        <div className='flex items-center gap-4 pt-4'>
+                            <Link
+                                href={github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className='p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                                aria-label="GitHub"
+                            >
+                                <Github size={24} />
+                            </Link>
+                            <Link
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className='inline-flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg'
+                            >
+                                Visit Project
+                                <ExternalLink size={18} />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
+        </motion.article>
     )
 }
 
 const Project = ({ title, type, img, link, github }: any) => {
     return (
-        <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4'>
-            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]' />
-            <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
-                <div className="w-full h-auto bg-gray-400 aspect-[16/9] flex items-center justify-center text-white">Thumbnail</div>
-            </Link>
+        <motion.article
+            variants={itemVariants}
+            className='group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300'
+        >
+            {/* Background Gradient on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            <div className='w-full flex flex-col items-start justify-between mt-4'>
-                <span className='text-primary font-medium text-xl dark:text-primaryDark lg:text-lg md:text-base'>{type}</span>
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w-full text-left text-3xl font-bold dark:text-light lg:text-2xl'>{title}</h2>
+            <div className='relative p-6'>
+                {/* Image Placeholder */}
+                <Link href={link} target="_blank" rel="noopener noreferrer">
+                    <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 aspect-video flex items-center justify-center group-hover:scale-105 transition-transform duration-300 mb-4 border border-gray-200 dark:border-gray-700">
+                        <span className='text-4xl'>⚙️</span>
+                    </div>
                 </Link>
-                <div className='w-full mt-2 flex items-center justify-between'>
-                    <Link href={link} target="_blank" className='text-lg font-semibold underline md:text-base'>Visit</Link>
-                    <Link href={github} target="_blank" className='w-8 md:w-6'><Github className="dark:text-light" /></Link>
+
+                {/* Content */}
+                <div className='space-y-3'>
+                    <span className='text-primary dark:text-primaryDark font-semibold text-xs uppercase tracking-wide'>{type}</span>
+                    <Link href={link} target="_blank" rel="noopener noreferrer">
+                        <h2 className='text-xl font-bold text-dark dark:text-light hover:text-primary dark:hover:text-primaryDark transition-colors line-clamp-2'>
+                            {title}
+                        </h2>
+                    </Link>
+
+                    <div className='flex items-center justify-between pt-2'>
+                        <Link
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='text-sm font-semibold text-primary dark:text-primaryDark hover:underline'
+                        >
+                            View Project →
+                        </Link>
+                        <Link
+                            href={github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                            aria-label="GitHub"
+                        >
+                            <Github size={20} />
+                        </Link>
+                    </div>
                 </div>
             </div>
-        </article>
+        </motion.article>
     )
 }
 
 const Projects = () => {
     return (
-        <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
+        <main className='w-full min-h-screen flex flex-col items-center justify-center py-20'>
             <Layout className='pt-16'>
-                <AnimatedText text="Imagination Trumps Knowledge!" className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className='mb-16'
+                >
+                    <h1 className='text-5xl lg:text-6xl font-bold text-center mb-4'>
+                        My <span className='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Projects</span>
+                    </h1>
+                    <p className='text-center text-secondary dark:text-gray-400 text-lg'>
+                        Imagination trumps knowledge
+                    </p>
+                </motion.div>
 
-                <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
-                    <div className='col-span-12'>
-                        {/* Projects will be added here later */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className='space-y-16'
+                >
+                    {/* Featured Project Example */}
+                    <FeaturedProject
+                        type="Featured Project"
+                        title="Autonomous Navigation Robot"
+                        summary="Developed an autonomous robot capable of navigating complex environments using advanced computer vision and SLAM algorithms. Implemented real-time obstacle detection and path planning for efficient navigation."
+                        link="https://github.com"
+                        github="https://github.com"
+                    />
+
+                    {/* Regular Projects Grid */}
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                        <Project
+                            type="Robotics"
+                            title="Robotic Arm Controller"
+                            link="https://github.com"
+                            github="https://github.com"
+                        />
+                        <Project
+                            type="AI/ML"
+                            title="Object Detection System"
+                            link="https://github.com"
+                            github="https://github.com"
+                        />
+                        <Project
+                            type="IoT"
+                            title="Smart Home Automation"
+                            link="https://github.com"
+                            github="https://github.com"
+                        />
                     </div>
-                </div>
+
+                    {/* Add More Projects CTA */}
+                    <motion.div
+                        variants={itemVariants}
+                        className='text-center pt-8'
+                    >
+                        <p className='text-secondary dark:text-gray-400 mb-4'>
+                            More projects coming soon...
+                        </p>
+                        <Link
+                            href="https://github.com/prathameshbarapatre5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 px-6 py-3 border-2 border-dark dark:border-light text-dark dark:text-light hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark rounded-lg font-semibold transition-all'
+                        >
+                            <Github size={20} />
+                            View All on GitHub
+                        </Link>
+                    </motion.div>
+                </motion.div>
             </Layout>
         </main>
     )
