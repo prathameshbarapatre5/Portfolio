@@ -20,29 +20,36 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const PublicationCard = ({ title, conference, year, type, description, link }: any) => {
+const PublicationCard = ({ title, conference, year, type, description, link, featured }: any) => {
     return (
         <motion.article
             variants={itemVariants}
-            className='group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300'
+            className={`group relative overflow-hidden rounded-xl border ${featured ? 'border-purple-500/50 dark:border-purple-400/50' : 'border-gray-200 dark:border-gray-800'} bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300 ${featured ? 'md:col-span-2' : ''}`}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            <div className='relative p-6'>
+            <div className={`relative ${featured ? 'p-8' : 'p-6'}`}>
                 <div className='space-y-4'>
                     {/* Icon & Badge */}
                     <div className='flex items-start justify-between'>
-                        <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center border border-gray-200 dark:border-gray-700'>
-                            <FileText className='text-purple-600 dark:text-purple-400' size={20} />
+                        <div className={`${featured ? 'w-14 h-14' : 'w-12 h-12'} rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center border border-gray-200 dark:border-gray-700`}>
+                            <FileText className='text-purple-600 dark:text-purple-400' size={featured ? 24 : 20} />
                         </div>
-                        <span className='px-3 py-1 bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold uppercase tracking-wide'>
-                            {type}
-                        </span>
+                        <div className='flex gap-2'>
+                            {featured && (
+                                <span className='px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-700 dark:text-yellow-400 rounded-full text-xs font-semibold uppercase tracking-wide border border-yellow-500/30'>
+                                    Featured
+                                </span>
+                            )}
+                            <span className='px-3 py-1 bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold uppercase tracking-wide'>
+                                {type}
+                            </span>
+                        </div>
                     </div>
 
                     {/* Title */}
                     <div>
-                        <h3 className='text-xl font-bold text-dark dark:text-light mb-2 leading-tight'>
+                        <h3 className={`${featured ? 'text-2xl' : 'text-xl'} font-bold text-dark dark:text-light mb-2 leading-tight`}>
                             {title}
                         </h3>
                         <div className='flex flex-wrap items-center gap-3 text-sm text-secondary dark:text-gray-400'>
@@ -58,7 +65,7 @@ const PublicationCard = ({ title, conference, year, type, description, link }: a
                     </div>
 
                     {/* Description */}
-                    <p className='text-sm text-secondary dark:text-gray-400 leading-relaxed'>
+                    <p className={`${featured ? 'text-base' : 'text-sm'} text-secondary dark:text-gray-400 leading-relaxed`}>
                         {description}
                     </p>
 
@@ -184,6 +191,15 @@ const MagazineCard = ({ title, description, edition, date, readTime, link, categ
 const Articles = () => {
     // Research Publications
     const publications = [
+        {
+            title: "Smart Transportation for Terrestrial Flooding and Lunar Search and Rescue: Innovative Approaches to Environmental Assessment and Funding for Space Sustainability",
+            conference: "75th International Astronautical Congress (IAC)",
+            year: "2024",
+            type: "White Paper",
+            description: "Published through International Space University (ISU SSP 2024). This comprehensive white paper explores dual-use smart transportation technologies for disaster response on Earth and the Moon. Part one addresses flood mitigation in urban areas, while part two proposes advanced lunar Search and Rescue operations using AI-equipped spacesuits, pressurized rovers, and robust communication networks for sustainable human lunar presence.",
+            link: "#",
+            featured: true
+        },
         {
             title: "Space-based Solar Power Satellite and Assembly using Space Robotics",
             conference: "SpaceOps 2023",
@@ -330,9 +346,9 @@ const Articles = () => {
                                     Academic Contributions
                                 </h3>
                                 <p className='text-secondary dark:text-gray-400 leading-relaxed'>
-                                    My research focuses on autonomous robotics for planetary exploration, space-based systems, and 
-                                    advanced technologies for deep space missions. These papers have been presented at premier 
-                                    international conferences including SpaceOps and the International Astronautical Congress (IAC).
+                                    My research focuses on autonomous robotics for planetary exploration, space-based systems, smart 
+                                    transportation for disaster response, and advanced technologies for deep space missions. These papers 
+                                    have been presented at premier international conferences including IAC and SpaceOps.
                                 </p>
                             </div>
                         </div>
