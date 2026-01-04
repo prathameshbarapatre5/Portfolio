@@ -36,12 +36,26 @@ const Navbar = () => {
         <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10">
             <div className="glass backdrop-blur-xl">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
+                    {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-lg shadow-lg shadow-primary/50">
-                            PB
+                        <div className="w-12 h-12 rounded-lg overflow-hidden border-2 border-primary/30 shadow-[0_0_15px_rgba(56,189,248,0.3)] hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transition-all">
+                            <img
+                                src="/Portfolio2/images/logo-photo.png"
+                                alt="Prathmesh Barapatre"
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                    const target = e.target as HTMLImageElement;
+                                    const parent = target.parentElement;
+                                    if (parent) {
+                                        parent.className = "w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-lg shadow-lg shadow-primary/50";
+                                        parent.innerHTML = 'PB';
+                                    }
+                                }}
+                            />
                         </div>
                     </Link>
 
+                    {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-8">
                         <CustomLink href="/" title="Home" />
                         <CustomLink href="/about" title="About" />
@@ -50,6 +64,7 @@ const Navbar = () => {
                         <CustomLink href="/articles" title="Articles" />
                     </nav>
 
+                    {/* Social Links */}
                     <div className="hidden md:flex items-center gap-4">
                         <motion.a
                             href="https://github.com/prathameshbarapatre5"
@@ -71,6 +86,7 @@ const Navbar = () => {
                         </motion.a>
                     </div>
 
+                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="md:hidden p-2 rounded-lg glass-hover transition-all"
@@ -79,6 +95,7 @@ const Navbar = () => {
                     </button>
                 </div>
 
+                {/* Mobile Navigation */}
                 <AnimatePresence>
                     {isOpen && (
                         <motion.div
