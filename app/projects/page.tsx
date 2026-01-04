@@ -58,7 +58,7 @@ const Projects = () => {
         },
         {
             title: "Portfolio Website",
-            description: "Modern portfolio with dark mode, animations, and glassmorphism effects. Built with Next.js.",
+            description: "Modern portfolio with Artemis Control theme, glassmorphism effects, and mission control aesthetic.",
             icon: "🌐",
             github: "https://github.com/prathameshbarapatre5/Portfolio",
             tags: ["Next.js", "TypeScript"],
@@ -92,7 +92,7 @@ const Projects = () => {
                         <motion.div
                             key={i}
                             variants={itemVariants}
-                            className={`group glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all cursor-pointer relative overflow-hidden
+                            className={`group glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all cursor-pointer relative overflow-hidden
                                 ${project.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
                                 ${project.size === 'wide' ? 'md:col-span-2' : ''}
                                 ${project.size === 'tall' ? 'md:row-span-2' : ''}
@@ -101,7 +101,7 @@ const Projects = () => {
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/10 group-hover:to-accent/10 transition-all duration-500"></div>
                             
                             <div className='relative z-10'>
-                                <div className='text-6xl mb-6 filter drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]'>
+                                <div className='text-6xl mb-6 filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]'>
                                     {project.icon}
                                 </div>
                                 
@@ -152,7 +152,7 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className='text-center mt-20'
                 >
-                    <div className='glass p-12 rounded-3xl neon-border max-w-3xl mx-auto hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all'>
+                    <div className='glass p-12 rounded-3xl neon-border max-w-3xl mx-auto hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all'>
                         <h3 className='text-3xl font-bold mb-4 text-gradient'>Explore More</h3>
                         <p className='text-secondary mb-8'>
                             Check out my GitHub for additional projects in robotics, space tech, and AI/ML
@@ -160,7 +160,7 @@ const Projects = () => {
                         <Link
                             href="https://github.com/prathameshbarapatre5"
                             target="_blank"
-                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-full font-bold hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all'
+                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-full font-bold text-dark hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all'
                         >
                             <Github size={20} />
                             View GitHub Profile

@@ -40,7 +40,7 @@ export default function Home() {
                         </Link>
                         <Link
                             href="/projects"
-                            className="px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-primary to-accent text-white hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all"
+                            className="px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-primary to-accent text-dark hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all"
                         >
                             View Work
                         </Link>
@@ -52,7 +52,7 @@ export default function Home() {
                         {[...skills, ...skills].map((skill, i) => (
                             <div
                                 key={i}
-                                className="glass px-6 py-3 rounded-full text-secondary font-semibold whitespace-nowrap neon-border hover:text-primary hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all flex-shrink-0"
+                                className="glass px-6 py-3 rounded-full text-secondary font-semibold whitespace-nowrap neon-border hover:text-primary hover:shadow-[0_0_20px_rgba(56,189,248,0.3)] transition-all flex-shrink-0"
                             >
                                 {skill}
                             </div>
@@ -76,7 +76,7 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className="glass p-6 rounded-2xl text-center neon-border hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all"
+                                className="glass p-6 rounded-2xl text-center neon-border hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all"
                             >
                                 <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
                                 <div className="text-sm text-secondary">{stat.label}</div>

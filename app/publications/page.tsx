@@ -112,7 +112,7 @@ const Publications = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className={`glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all group relative overflow-hidden
+                                className={`glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all group relative overflow-hidden
                                     ${pub.featured ? 'md:col-span-2 border-primary/50' : ''}
                                 `}
                             >
@@ -125,7 +125,7 @@ const Publications = () => {
                                         </div>
                                         <div className='flex gap-2'>
                                             {pub.featured && (
-                                                <span className='px-3 py-1 bg-gradient-to-r from-accent/20 to-primary/20 text-accent rounded-full text-xs font-bold uppercase border border-accent/30'>
+                                                <span className='px-3 py-1 bg-gradient-to-r from-accent/20 to-primary/20 text-primary rounded-full text-xs font-bold uppercase border border-primary/30'>
                                                     Featured
                                                 </span>
                                             )}
@@ -177,7 +177,7 @@ const Publications = () => {
                     className='mb-20'
                 >
                     <div className='flex items-center gap-3 mb-10'>
-                        <Video className='text-accent' size={32} />
+                        <Video className='text-primary' size={32} />
                         <h2 className='text-3xl font-bold'>Talks & Presentations</h2>
                     </div>
 
@@ -186,13 +186,13 @@ const Publications = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass rounded-2xl overflow-hidden neon-border hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all group'
+                                className='glass rounded-2xl overflow-hidden neon-border hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all group'
                             >
                                 <Link href={talk.link} target="_blank" className='block'>
                                     <div className='relative aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center'>
                                         <Video className='text-primary/50' size={64} />
                                         <div className='absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center'>
-                                            <div className='w-16 h-16 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform'>
+                                            <div className='w-16 h-16 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(56,189,248,0.6)]'>
                                                 <Play className='text-white ml-1' size={28} fill="white" />
                                             </div>
                                         </div>
@@ -220,7 +220,7 @@ const Publications = () => {
                         { value: "2", label: "Public Talks" },
                         { value: "3", label: "Premier Conferences" }
                     ].map((stat, i) => (
-                        <div key={i} className='glass p-8 rounded-2xl neon-border text-center hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all'>
+                        <div key={i} className='glass p-8 rounded-2xl neon-border text-center hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all'>
                             <div className='text-5xl font-bold text-primary mb-2'>{stat.value}</div>
                             <div className='text-sm text-secondary font-semibold'>{stat.label}</div>
                         </div>

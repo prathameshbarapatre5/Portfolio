@@ -92,9 +92,9 @@ const Articles = () => {
                     className='mb-20'
                 >
                     <div className='flex items-center gap-3 mb-10'>
-                        <Headphones className='text-accent' size={32} />
+                        <Headphones className='text-primary' size={32} />
                         <h2 className='text-3xl font-bold'>
-                            NSS Mumbai <span className='text-accent'>Podcasts</span>
+                            NSS Mumbai <span className='text-primary'>Podcasts</span>
                         </h2>
                     </div>
 
@@ -116,7 +116,7 @@ const Articles = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all'
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] transition-all'
                             >
                                 <div className='flex items-center gap-3 mb-4'>
                                     <div className='w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/30'>
@@ -183,9 +183,9 @@ const Articles = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass p-8 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all group'
+                                className='glass p-8 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] transition-all group'
                             >
-                                <div className='w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-4xl mb-6 border border-white/10'>
+                                <div className='w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-4xl mb-6 border border-light/10'>
                                     {mag.icon}
                                 </div>
 

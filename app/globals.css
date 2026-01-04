@@ -14,11 +14,13 @@
 
 @layer utilities {
     .glass {
-        @apply bg-white/5 backdrop-blur-xl border border-light/10;
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(56, 189, 248, 0.1);
     }
 
     .glass-hover {
-        @apply hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)];
+        @apply hover:bg-darkCard/80 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)];
     }
 
     .text-gradient {
@@ -26,12 +28,14 @@
     }
 
     .neon-border {
-        @apply border border-primary/30 shadow-[0_0_15px_rgba(124,58,237,0.2)];
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
     }
 }
 
 ::selection {
-    @apply bg-primary/30 text-light;
+    background: rgba(56, 189, 248, 0.3);
+    color: #f8fafc;
 }
 
 ::-webkit-scrollbar {
@@ -43,13 +47,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full hover:bg-primary/50;
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.5);
 }
 
 .bg-grid-pattern {
     background-image: 
-        linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
 }
 
