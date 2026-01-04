@@ -22,7 +22,7 @@
     }
 
     .text-gradient {
-        @apply bg-gradient-to-r from-primary via-accent to-neonPink bg-clip-text text-transparent;
+        @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
     }
 
     .neon-border {

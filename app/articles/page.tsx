@@ -116,11 +116,11 @@ const Articles = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all'
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all'
                             >
                                 <div className='flex items-center gap-3 mb-4'>
-                                    <div className='w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center border border-accent/30'>
-                                        <Mic className='text-accent' size={20} />
+                                    <div className='w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/30'>
+                                        <Mic className='text-primary' size={20} />
                                     </div>
                                     <h3 className='text-lg font-bold'>{podcast.title}</h3>
                                 </div>
@@ -143,7 +143,7 @@ const Articles = () => {
                         <Link
                             href="https://open.spotify.com/show/53qLtKpPs8qg8SNY3fHrSs"
                             target="_blank"
-                            className='inline-flex items-center gap-2 px-6 py-3 bg-accent/10 hover:bg-accent/20 rounded-full text-accent font-bold transition-all border border-accent/30'
+                            className='inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 rounded-full text-primary font-bold transition-all border border-primary/30'
                         >
                             <Headphones size={20} />
                             View All Episodes

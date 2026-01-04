@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -153,13 +152,18 @@ const About = () => {
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-3xl blur-2xl opacity-30"></div>
                             <div className='relative glass p-2 rounded-3xl neon-border overflow-hidden max-w-md'>
-                                <Image
-                                    src="/images/about-photo.jpg"
+                                <img
+                                    src="/Portfolio2/images/about-photo.jpg"
                                     alt="Prathmesh Barapatre"
-                                    width={500}
-                                    height={500}
                                     className='w-full h-auto rounded-2xl'
-                                    priority
+                                    onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.style.display = 'none';
+                                        const parent = target.parentElement;
+                                        if (parent) {
+                                            parent.innerHTML = '<div class="w-full aspect-square flex items-center justify-center text-9xl">👨‍🚀</div>';
+                                        }
+                                    }}
                                 />
                             </div>
                         </div>
@@ -251,7 +255,7 @@ const About = () => {
                                 viewport={{ once: true }}
                                 className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all relative pl-12'
                             >
-                                <div className='absolute left-6 top-6 w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(6,182,212,0.8)]'></div>
+                                <div className='absolute left-6 top-6 w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(99,102,241,0.8)]'></div>
                                 <h3 className='text-xl font-bold text-light mb-1'>{item.degree}</h3>
                                 <div className='text-accent font-semibold mb-2'>{item.school}</div>
                                 <div className='text-sm text-secondary mb-3'>{item.period}</div>

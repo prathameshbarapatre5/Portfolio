@@ -10,12 +10,12 @@ const config: Config = {
         extend: {
             colors: {
                 dark: "#09090b",
+                darker: "#000000",
                 light: "#fafafa",
                 primary: "#a855f7",
                 primaryDark: "#c084fc",
                 secondary: "#a1a1aa",
-                accent: "#06b6d4",
-                neonPink: "#ec4899",
+                accent: "#6366f1",
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],

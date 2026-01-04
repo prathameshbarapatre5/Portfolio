@@ -21,7 +21,7 @@ export default function Home() {
                     transition={{ duration: 0.8 }}
                     className="max-w-6xl"
                 >
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 bg-gradient-to-r from-primary via-accent to-neonPink bg-clip-text text-transparent animate-gradient-text leading-tight">
+                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient-text leading-tight">
                         Prathmesh Barapatre
                     </h1>
                     <p className="text-xl md:text-2xl text-secondary font-light mb-12 max-w-3xl mx-auto">
@@ -40,7 +40,7 @@ export default function Home() {
                         </Link>
                         <Link
                             href="/projects"
-                            className="px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-primary to-accent text-dark hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all"
+                            className="px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-primary to-accent text-white hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all"
                         >
                             View Work
                         </Link>
