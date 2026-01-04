@@ -9,13 +9,12 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                dark: "#09090b",
-                darker: "#000000",
-                light: "#fafafa",
-                primary: "#a855f7",
-                primaryDark: "#c084fc",
+                dark: "#030014",
+                light: "#e4e4e7",
+                primary: "#7c3aed",
+                primaryDark: "#9333ea",
                 secondary: "#a1a1aa",
-                accent: "#6366f1",
+                accent: "#3b82f6",
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
