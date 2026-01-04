@@ -100,10 +100,10 @@ const About = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className='text-center mb-20'
                 >
-                    <h1 className='text-5xl lg:text-7xl font-black mb-4'>
-                        About <span className='text-gradient'>Me</span>
+                    <h1 className='text-5xl lg:text-7xl font-black mb-4 text-white'>
+                        About <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Me</span>
                     </h1>
-                    <p className='text-xl text-secondary max-w-2xl mx-auto'>
+                    <p className='text-xl text-white/50 max-w-2xl mx-auto'>
                         Passion fuels purpose
                     </p>
                 </motion.div>
@@ -115,10 +115,10 @@ const About = () => {
                     className='grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32'
                 >
                     <motion.div variants={itemVariants} className='space-y-6'>
-                        <h2 className='text-3xl font-bold text-gradient mb-6'>Biography</h2>
-                        <div className='space-y-4 text-secondary text-lg leading-relaxed'>
+                        <h2 className='text-3xl font-bold text-white mb-6'>Biography</h2>
+                        <div className='space-y-4 text-white/60 text-lg leading-relaxed'>
                             <p>
-                                Hi, I'm <strong className='text-light'>Prathmesh Barapatre</strong>, a Robotics Engineer and Space Enthusiast 
+                                Hi, I'm <strong className='text-white'>Prathmesh Barapatre</strong>, a Robotics Engineer and Space Enthusiast 
                                 with a passion for creating functional, futuristic, and innovative technological solutions.
                             </p>
                             <p>
@@ -140,8 +140,8 @@ const About = () => {
                                 { value: "6+", label: "Publications" },
                                 { value: "500+", label: "Students Mentored" }
                             ].map((stat, i) => (
-                                <div key={i} className='glass p-4 rounded-xl neon-border text-center hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all'>
-                                    <div className='text-2xl font-bold text-gradient'>{stat.value}</div>
+                                <div key={i} className='glass p-4 rounded-xl neon-border text-center hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all'>
+                                    <div className='text-2xl font-bold text-white'>{stat.value}</div>
                                     <div className='text-sm text-secondary mt-1'>{stat.label}</div>
                                 </div>
                             ))}
@@ -150,7 +150,7 @@ const About = () => {
 
                     <motion.div variants={itemVariants} className='flex items-center justify-center'>
                         <div className="relative">
-                            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-3xl blur-2xl opacity-30"></div>
+                            <div className="absolute -inset-4 bg-white/5 rounded-3xl blur-2xl"></div>
                             <div className='relative glass p-2 rounded-3xl neon-border overflow-hidden max-w-md'>
                                 <img
                                     src="/Portfolio2/images/about-photo.jpg"
@@ -158,7 +158,6 @@ const About = () => {
                                     className='w-full h-auto rounded-2xl'
                                     onError={(e) => {
                                         const target = e.target as HTMLImageElement;
-                                        target.style.display = 'none';
                                         const parent = target.parentElement;
                                         if (parent) {
                                             parent.innerHTML = '<div class="w-full aspect-square flex items-center justify-center text-9xl">👨‍🚀</div>';
@@ -176,8 +175,8 @@ const About = () => {
                     viewport={{ once: true }}
                     className='mb-32'
                 >
-                    <h2 className='text-4xl font-bold text-center mb-12'>
-                        Technical <span className='text-gradient'>Expertise</span>
+                    <h2 className='text-4xl font-bold text-center mb-12 text-white'>
+                        Technical <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Expertise</span>
                     </h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -188,14 +187,14 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all'
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all'
                             >
-                                <h3 className='text-xl font-bold text-primary mb-4'>{category.title}</h3>
+                                <h3 className='text-xl font-bold text-white mb-4'>{category.title}</h3>
                                 <div className='flex flex-wrap gap-2'>
                                     {category.skills.map((skill, j) => (
                                         <span
                                             key={j}
-                                            className='px-3 py-1.5 bg-white/5 rounded-lg text-sm font-medium text-secondary hover:text-primary hover:bg-primary/10 transition-all cursor-default border border-white/5'
+                                            className='px-3 py-1.5 bg-white/5 rounded-lg text-sm font-medium text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-default border border-white/10'
                                         >
                                             {skill}
                                         </span>
@@ -212,8 +211,8 @@ const About = () => {
                     viewport={{ once: true }}
                     className='mb-32'
                 >
-                    <h2 className='text-4xl font-bold text-center mb-12'>
-                        Professional <span className='text-gradient'>Journey</span>
+                    <h2 className='text-4xl font-bold text-center mb-12 text-white'>
+                        Professional <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Journey</span>
                     </h2>
 
                     <div className='space-y-6 max-w-4xl mx-auto'>
@@ -224,13 +223,13 @@ const About = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all relative pl-12'
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all relative pl-12'
                             >
-                                <div className='absolute left-6 top-6 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]'></div>
-                                <h3 className='text-xl font-bold text-light mb-1'>{item.role}</h3>
-                                <div className='text-primary font-semibold mb-2'>{item.org}</div>
+                                <div className='absolute left-6 top-6 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]'></div>
+                                <h3 className='text-xl font-bold text-white mb-1'>{item.role}</h3>
+                                <div className='text-white/80 font-semibold mb-2'>{item.org}</div>
                                 <div className='text-sm text-secondary mb-3'>{item.period} | {item.location}</div>
-                                <p className='text-secondary'>{item.description}</p>
+                                <p className='text-white/60'>{item.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -241,8 +240,8 @@ const About = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className='text-4xl font-bold text-center mb-12'>
-                        <span className='text-gradient'>Education</span>
+                    <h2 className='text-4xl font-bold text-center mb-12 text-white'>
+                        <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Education</span>
                     </h2>
 
                     <div className='space-y-6 max-w-4xl mx-auto'>
@@ -253,13 +252,13 @@ const About = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all relative pl-12'
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all relative pl-12'
                             >
-                                <div className='absolute left-6 top-6 w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_rgba(99,102,241,0.8)]'></div>
-                                <h3 className='text-xl font-bold text-light mb-1'>{item.degree}</h3>
-                                <div className='text-accent font-semibold mb-2'>{item.school}</div>
+                                <div className='absolute left-6 top-6 w-2 h-2 bg-white/70 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.6)]'></div>
+                                <h3 className='text-xl font-bold text-white mb-1'>{item.degree}</h3>
+                                <div className='text-white/80 font-semibold mb-2'>{item.school}</div>
                                 <div className='text-sm text-secondary mb-3'>{item.period}</div>
-                                <p className='text-secondary text-sm'>{item.details}</p>
+                                <p className='text-white/60 text-sm'>{item.details}</p>
                             </motion.div>
                         ))}
                     </div>

@@ -88,8 +88,8 @@ const Publications = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className='text-center mb-20'
                 >
-                    <h1 className='text-5xl lg:text-7xl font-black mb-4'>
-                        Research <span className='text-gradient'>Publications</span>
+                    <h1 className='text-5xl lg:text-7xl font-black mb-4 text-white'>
+                        Research <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Publications</span>
                     </h1>
                     <p className='text-xl text-secondary max-w-2xl mx-auto'>
                         Academic papers and presentations on space robotics
@@ -103,8 +103,8 @@ const Publications = () => {
                     className='mb-20'
                 >
                     <div className='flex items-center gap-3 mb-10'>
-                        <FileText className='text-primary' size={32} />
-                        <h2 className='text-3xl font-bold'>Conference Papers</h2>
+                        <FileText className='text-white' size={32} />
+                        <h2 className='text-3xl font-bold text-white'>Conference Papers</h2>
                     </div>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
@@ -112,30 +112,30 @@ const Publications = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className={`glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all group relative overflow-hidden
-                                    ${pub.featured ? 'md:col-span-2 border-primary/50' : ''}
+                                className={`glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all group relative overflow-hidden
+                                    ${pub.featured ? 'md:col-span-2 border-white/30' : ''}
                                 `}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 transition-all duration-500"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/5 group-hover:to-white/5 transition-all duration-500"></div>
                                 
                                 <div className='relative'>
                                     <div className='flex items-start justify-between mb-4'>
-                                        <div className='w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/30'>
-                                            <FileText className='text-primary' size={24} />
+                                        <div className='w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/20'>
+                                            <FileText className='text-white' size={24} />
                                         </div>
                                         <div className='flex gap-2'>
                                             {pub.featured && (
-                                                <span className='px-3 py-1 bg-gradient-to-r from-accent/20 to-primary/20 text-primary rounded-full text-xs font-bold uppercase border border-primary/30'>
+                                                <span className='px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold uppercase border border-white/20'>
                                                     Featured
                                                 </span>
                                             )}
-                                            <span className='px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase border border-primary/30'>
+                                            <span className='px-3 py-1 bg-white/5 text-white/80 rounded-full text-xs font-bold uppercase border border-white/20'>
                                                 {pub.type}
                                             </span>
                                         </div>
                                     </div>
 
-                                    <h3 className='text-xl font-bold mb-3 text-light group-hover:text-gradient transition-all'>
+                                    <h3 className='text-xl font-bold mb-3 text-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all'>
                                         {pub.title}
                                     </h3>
 
@@ -150,14 +150,14 @@ const Publications = () => {
                                         </div>
                                     </div>
 
-                                    <p className='text-secondary leading-relaxed mb-6'>
+                                    <p className='text-white/60 leading-relaxed mb-6'>
                                         {pub.description}
                                     </p>
 
                                     <Link
                                         href={pub.link}
                                         target="_blank"
-                                        className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 rounded-lg text-primary font-semibold text-sm transition-all border border-primary/30'
+                                        className='inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-white font-semibold text-sm transition-all border border-white/20'
                                     >
                                         <ExternalLink size={16} />
                                         View Publication
@@ -177,8 +177,8 @@ const Publications = () => {
                     className='mb-20'
                 >
                     <div className='flex items-center gap-3 mb-10'>
-                        <Video className='text-primary' size={32} />
-                        <h2 className='text-3xl font-bold'>Talks & Presentations</h2>
+                        <Video className='text-white' size={32} />
+                        <h2 className='text-3xl font-bold text-white'>Talks & Presentations</h2>
                     </div>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
@@ -186,22 +186,22 @@ const Publications = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass rounded-2xl overflow-hidden neon-border hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all group'
+                                className='glass rounded-2xl overflow-hidden neon-border hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all group'
                             >
                                 <Link href={talk.link} target="_blank" className='block'>
-                                    <div className='relative aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center'>
-                                        <Video className='text-primary/50' size={64} />
+                                    <div className='relative aspect-video bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center'>
+                                        <Video className='text-white/30' size={64} />
                                         <div className='absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center'>
-                                            <div className='w-16 h-16 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(56,189,248,0.6)]'>
-                                                <Play className='text-white ml-1' size={28} fill="white" />
+                                            <div className='w-16 h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.5)]'>
+                                                <Play className='text-black ml-1' size={28} fill="black" />
                                             </div>
                                         </div>
                                     </div>
                                     <div className='p-6'>
-                                        <h3 className='text-xl font-bold mb-2 text-light group-hover:text-primary transition-colors'>
+                                        <h3 className='text-xl font-bold mb-2 text-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-colors'>
                                             {talk.title}
                                         </h3>
-                                        <p className='text-secondary text-sm'>{talk.description}</p>
+                                        <p className='text-white/60 text-sm'>{talk.description}</p>
                                     </div>
                                 </Link>
                             </motion.div>
@@ -220,8 +220,8 @@ const Publications = () => {
                         { value: "2", label: "Public Talks" },
                         { value: "3", label: "Premier Conferences" }
                     ].map((stat, i) => (
-                        <div key={i} className='glass p-8 rounded-2xl neon-border text-center hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all'>
-                            <div className='text-5xl font-bold text-primary mb-2'>{stat.value}</div>
+                        <div key={i} className='glass p-8 rounded-2xl neon-border text-center hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all'>
+                            <div className='text-5xl font-bold text-white mb-2'>{stat.value}</div>
                             <div className='text-sm text-secondary font-semibold'>{stat.label}</div>
                         </div>
                     ))}

@@ -9,13 +9,13 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                dark: "#020617",
-                darkCard: "#0f172a",
-                light: "#f8fafc",
-                primary: "#38bdf8",
-                primaryDark: "#0ea5e9",
-                secondary: "#64748b",
-                accent: "#0ea5e9",
+                dark: "#000000",
+                darkCard: "#0a0a0a",
+                light: "#ffffff",
+                primary: "#ffffff",
+                primaryDark: "#e5e5e5",
+                secondary: "#737373",
+                accent: "#d4d4d4",
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -36,8 +36,8 @@ const config: Config = {
                     '100%': { transform: 'translateX(-50%)' },
                 },
                 'glow-pulse': {
-                    '0%, 100%': { opacity: '0.4' },
-                    '50%': { opacity: '0.8' },
+                    '0%, 100%': { opacity: '0.3' },
+                    '50%': { opacity: '0.6' },
                 },
                 float: {
                     '0%, 100%': { transform: 'translateY(0px)' },

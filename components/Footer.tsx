@@ -15,33 +15,33 @@ const Footer = () => {
                             <a
                                 href="https://github.com/prathameshbarapatre5"
                                 target="_blank"
-                                className='group text-secondary hover:text-primary transition-colors text-xl font-semibold relative'
+                                className='group text-secondary hover:text-white transition-colors text-xl font-semibold relative'
                             >
                                 GitHub
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/prathmesh-barapatre/"
                                 target="_blank"
-                                className='group text-secondary hover:text-primary transition-colors text-xl font-semibold relative'
+                                className='group text-secondary hover:text-white transition-colors text-xl font-semibold relative'
                             >
                                 LinkedIn
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
                             </a>
                             <a
                                 href="mailto:barapatre.p@northeastern.edu"
-                                className='group text-secondary hover:text-primary transition-colors text-xl font-semibold relative'
+                                className='group text-secondary hover:text-white transition-colors text-xl font-semibold relative'
                             >
                                 Email
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
                             </a>
                             <a
                                 href="https://www.nss-mumbai.org"
                                 target="_blank"
-                                className='group text-secondary hover:text-primary transition-colors text-xl font-semibold relative'
+                                className='group text-secondary hover:text-white transition-colors text-xl font-semibold relative'
                             >
                                 NSS Mumbai
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></span>
                             </a>
                         </div>
                     </div>

@@ -77,8 +77,8 @@ const Articles = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className='text-center mb-20'
                 >
-                    <h1 className='text-5xl lg:text-7xl font-black mb-4'>
-                        Articles & <span className='text-gradient'>Media</span>
+                    <h1 className='text-5xl lg:text-7xl font-black mb-4 text-white'>
+                        Articles & <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Media</span>
                     </h1>
                     <p className='text-xl text-secondary max-w-2xl mx-auto'>
                         Podcasts and magazines exploring space and technology
@@ -92,9 +92,9 @@ const Articles = () => {
                     className='mb-20'
                 >
                     <div className='flex items-center gap-3 mb-10'>
-                        <Headphones className='text-primary' size={32} />
-                        <h2 className='text-3xl font-bold'>
-                            NSS Mumbai <span className='text-primary'>Podcasts</span>
+                        <Headphones className='text-white' size={32} />
+                        <h2 className='text-3xl font-bold text-white'>
+                            NSS Mumbai <span className='drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]'>Podcasts</span>
                         </h2>
                     </div>
 
@@ -102,8 +102,8 @@ const Articles = () => {
                         <div className='flex items-start gap-4'>
                             <div className='text-4xl'>🎙️</div>
                             <div>
-                                <h3 className='text-xl font-bold mb-2'>About the Podcast Series</h3>
-                                <p className='text-secondary leading-relaxed'>
+                                <h3 className='text-xl font-bold mb-2 text-white'>About the Podcast Series</h3>
+                                <p className='text-white/60 leading-relaxed'>
                                     Engaging conversations with space industry leaders, researchers, and innovators 
                                     covering developments in space technology, robotics, and STEM education.
                                 </p>
@@ -116,13 +116,13 @@ const Articles = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] transition-all'
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all'
                             >
                                 <div className='flex items-center gap-3 mb-4'>
-                                    <div className='w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/30'>
-                                        <Mic className='text-primary' size={20} />
+                                    <div className='w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/20'>
+                                        <Mic className='text-white' size={20} />
                                     </div>
-                                    <h3 className='text-lg font-bold'>{podcast.title}</h3>
+                                    <h3 className='text-lg font-bold text-white'>{podcast.title}</h3>
                                 </div>
                                 <iframe 
                                     style={{ borderRadius: '12px' }} 
@@ -143,7 +143,7 @@ const Articles = () => {
                         <Link
                             href="https://open.spotify.com/show/53qLtKpPs8qg8SNY3fHrSs"
                             target="_blank"
-                            className='inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 rounded-full text-primary font-bold transition-all border border-primary/30'
+                            className='inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-full text-white font-bold transition-all border border-white/20'
                         >
                             <Headphones size={20} />
                             View All Episodes
@@ -159,9 +159,9 @@ const Articles = () => {
                     viewport={{ once: true }}
                 >
                     <div className='flex items-center gap-3 mb-10'>
-                        <BookOpen className='text-primary' size={32} />
-                        <h2 className='text-3xl font-bold'>
-                            CosmicWeb <span className='text-gradient'>Magazine</span>
+                        <BookOpen className='text-white' size={32} />
+                        <h2 className='text-3xl font-bold text-white'>
+                            CosmicWeb <span className='drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]'>Magazine</span>
                         </h2>
                     </div>
 
@@ -169,8 +169,8 @@ const Articles = () => {
                         <div className='flex items-start gap-4'>
                             <div className='text-4xl'>📖</div>
                             <div>
-                                <h3 className='text-xl font-bold mb-2'>About CosmicWeb</h3>
-                                <p className='text-secondary leading-relaxed'>
+                                <h3 className='text-xl font-bold mb-2 text-white'>About CosmicWeb</h3>
+                                <p className='text-white/60 leading-relaxed'>
                                     Official magazine of NSS Mumbai featuring cutting-edge space exploration news, 
                                     technology insights, and contributions from space enthusiasts worldwide.
                                 </p>
@@ -183,21 +183,21 @@ const Articles = () => {
                             <motion.div
                                 key={i}
                                 variants={itemVariants}
-                                className='glass p-8 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] transition-all group'
+                                className='glass p-8 rounded-2xl neon-border hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all group'
                             >
-                                <div className='w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-4xl mb-6 border border-light/10'>
+                                <div className='w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center text-4xl mb-6 border border-white/10'>
                                     {mag.icon}
                                 </div>
 
                                 <div className='text-sm text-secondary mb-3'>{mag.edition}</div>
 
                                 <Link href={mag.link} target="_blank">
-                                    <h3 className='text-2xl font-bold mb-3 text-light group-hover:text-gradient transition-all'>
+                                    <h3 className='text-2xl font-bold mb-3 text-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all'>
                                         {mag.title}
                                     </h3>
                                 </Link>
 
-                                <p className='text-secondary leading-relaxed mb-6'>
+                                <p className='text-white/60 leading-relaxed mb-6'>
                                     {mag.description}
                                 </p>
 
@@ -215,7 +215,7 @@ const Articles = () => {
                                 <Link
                                     href={mag.link}
                                     target="_blank"
-                                    className='inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all'
+                                    className='inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all'
                                 >
                                     Read Magazine
                                     <ArrowRight size={18} />

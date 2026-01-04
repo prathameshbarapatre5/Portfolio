@@ -58,7 +58,7 @@ const Projects = () => {
         },
         {
             title: "Portfolio Website",
-            description: "Modern portfolio with Artemis Control theme, glassmorphism effects, and mission control aesthetic.",
+            description: "Minimalist portfolio with monochromatic design, glassmorphism effects, and clean aesthetic.",
             icon: "🌐",
             github: "https://github.com/prathameshbarapatre5/Portfolio",
             tags: ["Next.js", "TypeScript"],
@@ -74,8 +74,8 @@ const Projects = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className='text-center mb-20'
                 >
-                    <h1 className='text-5xl lg:text-7xl font-black mb-4'>
-                        Featured <span className='text-gradient'>Projects</span>
+                    <h1 className='text-5xl lg:text-7xl font-black mb-4 text-white'>
+                        Featured <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Projects</span>
                     </h1>
                     <p className='text-xl text-secondary max-w-2xl mx-auto'>
                         Robotics, Space Technology, and AI/ML innovations
@@ -92,24 +92,24 @@ const Projects = () => {
                         <motion.div
                             key={i}
                             variants={itemVariants}
-                            className={`group glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all cursor-pointer relative overflow-hidden
+                            className={`group glass p-8 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all cursor-pointer relative overflow-hidden
                                 ${project.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
                                 ${project.size === 'wide' ? 'md:col-span-2' : ''}
                                 ${project.size === 'tall' ? 'md:row-span-2' : ''}
                             `}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/10 group-hover:to-accent/10 transition-all duration-500"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/5 group-hover:to-white/5 transition-all duration-500"></div>
                             
                             <div className='relative z-10'>
-                                <div className='text-6xl mb-6 filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]'>
+                                <div className='text-6xl mb-6 filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]'>
                                     {project.icon}
                                 </div>
                                 
-                                <h3 className='text-2xl font-bold mb-4 text-light group-hover:text-gradient transition-all'>
+                                <h3 className='text-2xl font-bold mb-4 text-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all'>
                                     {project.title}
                                 </h3>
                                 
-                                <p className='text-secondary leading-relaxed mb-6'>
+                                <p className='text-white/60 leading-relaxed mb-6'>
                                     {project.description}
                                 </p>
                                 
@@ -117,7 +117,7 @@ const Projects = () => {
                                     {project.tags.map((tag, j) => (
                                         <span
                                             key={j}
-                                            className='px-3 py-1 bg-primary/10 rounded-lg text-xs font-semibold text-primary border border-primary/20'
+                                            className='px-3 py-1 bg-white/5 rounded-lg text-xs font-semibold text-white/80 border border-white/10'
                                         >
                                             {tag}
                                         </span>
@@ -128,14 +128,14 @@ const Projects = () => {
                                     <Link
                                         href={project.github}
                                         target="_blank"
-                                        className='flex items-center gap-2 text-secondary hover:text-primary transition-colors'
+                                        className='flex items-center gap-2 text-secondary hover:text-white transition-colors'
                                     >
                                         <Github size={20} />
                                     </Link>
                                     <Link
                                         href={project.github}
                                         target="_blank"
-                                        className='flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 rounded-lg text-primary font-semibold text-sm transition-all border border-primary/30'
+                                        className='flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-white font-semibold text-sm transition-all border border-white/20'
                                     >
                                         View Project
                                         <ExternalLink size={16} />
@@ -152,15 +152,15 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className='text-center mt-20'
                 >
-                    <div className='glass p-12 rounded-3xl neon-border max-w-3xl mx-auto hover:shadow-[0_0_40px_rgba(56,189,248,0.4)] transition-all'>
-                        <h3 className='text-3xl font-bold mb-4 text-gradient'>Explore More</h3>
-                        <p className='text-secondary mb-8'>
+                    <div className='glass p-12 rounded-3xl neon-border max-w-3xl mx-auto hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all'>
+                        <h3 className='text-3xl font-bold mb-4 text-white'>Explore More</h3>
+                        <p className='text-white/60 mb-8'>
                             Check out my GitHub for additional projects in robotics, space tech, and AI/ML
                         </p>
                         <Link
                             href="https://github.com/prathameshbarapatre5"
                             target="_blank"
-                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-full font-bold text-dark hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all'
+                            className='inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-bold hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all'
                         >
                             <Github size={20} />
                             View GitHub Profile
