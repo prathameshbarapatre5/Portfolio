@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -151,8 +152,15 @@ const About = () => {
                     <motion.div variants={itemVariants} className='flex items-center justify-center'>
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-3xl blur-2xl opacity-30"></div>
-                            <div className='relative glass p-8 rounded-3xl neon-border aspect-square flex items-center justify-center max-w-md'>
-                                <div className='text-9xl'>👨‍🚀</div>
+                            <div className='relative glass p-2 rounded-3xl neon-border overflow-hidden max-w-md'>
+                                <Image
+                                    src="/images/about-photo.jpg"
+                                    alt="Prathmesh Barapatre"
+                                    width={500}
+                                    height={500}
+                                    className='w-full h-auto rounded-2xl'
+                                    priority
+                                />
                             </div>
                         </div>
                     </motion.div>
