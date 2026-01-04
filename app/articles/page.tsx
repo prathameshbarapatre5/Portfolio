@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Headphones, BookOpen, Calendar, Clock, ArrowRight, Mic } from 'lucide-react'
+import { Headphones, BookOpen, Calendar, Clock, ArrowRight, Mic, Globe } from 'lucide-react'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -157,6 +157,7 @@ const Articles = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
+                    className='mb-20'
                 >
                     <div className='flex items-center gap-3 mb-10'>
                         <BookOpen className='text-white' size={32} />
@@ -222,6 +223,41 @@ const Articles = () => {
                                 </Link>
                             </motion.div>
                         ))}
+                    </div>
+                </motion.div>
+
+                {/* Stay Connected Section */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className='text-center p-8 rounded-xl glass neon-border'
+                >
+                    <Globe className='mx-auto text-white mb-4' size={48} />
+                    <h3 className='text-2xl font-bold mb-3 text-white'>
+                        Stay Connected
+                    </h3>
+                    <p className='text-white/60 mb-6 max-w-2xl mx-auto'>
+                        Follow my media work and space advocacy initiatives across various platforms
+                    </p>
+                    <div className='flex justify-center gap-4 flex-wrap'>
+                        <Link
+                            href="https://www.linkedin.com/in/prathmesh-barapatre/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 px-6 py-3 bg-white text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] rounded-lg font-semibold transition-all'
+                        >
+                            View LinkedIn Profile
+                            <ArrowRight size={18} />
+                        </Link>
+                        <Link
+                            href="https://www.nss-mumbai.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 px-6 py-3 glass border-2 border-white/20 text-white hover:bg-white/5 hover:border-white/40 rounded-lg font-semibold transition-all'
+                        >
+                            Visit NSS Mumbai
+                        </Link>
                     </div>
                 </motion.div>
             </div>

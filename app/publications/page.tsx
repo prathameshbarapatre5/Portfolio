@@ -213,7 +213,7 @@ const Publications = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className='grid grid-cols-1 md:grid-cols-3 gap-6'
+                    className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-20'
                 >
                     {[
                         { value: "6", label: "Conference Papers" },
@@ -225,6 +225,39 @@ const Publications = () => {
                             <div className='text-sm text-secondary font-semibold'>{stat.label}</div>
                         </div>
                     ))}
+                </motion.div>
+
+                {/* Interested in Collaboration Section */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9 }}
+                    className='text-center p-8 rounded-xl glass neon-border'
+                >
+                    <FileText className='mx-auto text-white mb-4' size={48} />
+                    <h3 className='text-2xl font-bold mb-3 text-white'>
+                        Interested in Collaboration?
+                    </h3>
+                    <p className='text-white/60 mb-6 max-w-2xl mx-auto'>
+                        I'm always open to research collaborations, speaking opportunities, and discussions about space robotics and exploration
+                    </p>
+                    <div className='flex justify-center gap-4 flex-wrap'>
+                        <Link
+                            href="https://www.linkedin.com/in/prathmesh-barapatre/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-flex items-center gap-2 px-6 py-3 bg-white text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] rounded-lg font-semibold transition-all'
+                        >
+                            Connect on LinkedIn
+                            <ArrowRight size={18} />
+                        </Link>
+                        <Link
+                            href="mailto:barapatre.p@northeastern.edu"
+                            className='inline-flex items-center gap-2 px-6 py-3 glass border-2 border-white/20 text-white hover:bg-white/5 hover:border-white/40 rounded-lg font-semibold transition-all'
+                        >
+                            Email Me
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
         </main>
