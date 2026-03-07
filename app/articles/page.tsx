@@ -21,11 +21,11 @@ const Articles = () => {
             embedUrl: "https://open.spotify.com/embed/episode/2JQuT3FOwkgpc0Vebqwo5o?utm_source=generator&theme=0"
         },
         {
-            title: "Episode 2: Robotics & Innovation",
+            title: "Episode 2: Black Holes and AGNs",
             embedUrl: "https://open.spotify.com/embed/episode/6vyMIsAapzFZei1kduEwSZ?utm_source=generator"
         },
         {
-            title: "Episode 3: Future of Space Technology",
+            title: "Episode 3: Future with Artificial Intelligence",
             embedUrl: "https://open.spotify.com/embed/episode/2DAsZd26EPPtrh61dLnrT3?utm_source=generator"
         }
     ];
@@ -41,7 +41,7 @@ const Articles = () => {
             link: "https://online.fliphtml5.com/mydwa/wtjf/"
         },
         {
-            title: "CosmicWeb Magazine - Edition 7",
+            title: "Future of Space Exploration",
             description: "Latest developments in space exploration, technology, and science from NSS Mumbai.",
             edition: "Edition 7",
             date: "2024",
@@ -50,7 +50,7 @@ const Articles = () => {
             link: "https://pubhtml5.com/ajfv/ikqe/"
         },
         {
-            title: "CosmicWeb - Latest Edition",
+            title: "CosmicWeb - Exoplanets",
             description: "Comprehensive coverage of NASA missions and emerging space technologies.",
             edition: "Latest",
             date: "2024",
@@ -59,7 +59,7 @@ const Articles = () => {
             link: "https://online.pubhtml5.com/ajfv/kxij/#p=2"
         },
         {
-            title: "CosmicWeb Special Issue",
+            title: "Dark Matter & Dark Energy",
             description: "Breakthrough discoveries in astronomy and space technology innovations.",
             edition: "Special",
             date: "2024",

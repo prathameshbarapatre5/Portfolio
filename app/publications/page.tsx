@@ -69,12 +69,12 @@ const Publications = () => {
 
     const talks = [
         {
-            title: "Space Technology & Career Opportunities",
+            title: "Mind Bending News Of Space, Science & Universe Ft. Prathmesh Barapatre | The Awaara Musaafir Show 46",
             description: "Career pathways in space industry and transitioning into space technology roles.",
             link: "https://youtu.be/ttAQ8XNq97I?si=3N6W2xkjo5_v4LcB"
         },
         {
-            title: "Robotics & Space Exploration",
+            title: "Commercial LEO Space Stations and the NASA Commercial LEO Destinations Program",
             description: "Role of robotics in space missions and future of robotic technologies.",
             link: "https://youtu.be/jTZgHB3ZYWI?si=JFOsomS8inejVwCD"
         }
