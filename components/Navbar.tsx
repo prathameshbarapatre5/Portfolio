@@ -36,14 +36,15 @@ const Navbar = () => {
         <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-light/80 dark:bg-dark/80 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2">
-                    <div className="w-12 h-12 rounded-lg bg-white dark:bg-gray-900 border-2 border-primary/30 shadow-lg hover:shadow-xl transition-all flex items-center justify-center p-1.5">
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-gray-900 to-black dark:from-gray-800 dark:to-gray-900 border border-primary/20 shadow-lg flex items-center justify-center p-2 group-hover:border-primary/40 group-hover:shadow-xl transition-all">
                         <img
                             src={`${process.env.NODE_ENV === 'production' ? '/Portfolio' : ''}/images/logo-photo.png`}
                             alt="Logo"
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-contain filter brightness-0 dark:brightness-100 invert dark:invert-0"
                         />
                     </div>
+                    <span className="hidden sm:block font-bold text-lg text-dark dark:text-light">Prathmesh</span>
                 </Link>
 
                 {/* Desktop Navigation */}
