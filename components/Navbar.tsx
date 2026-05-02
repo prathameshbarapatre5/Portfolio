@@ -38,9 +38,9 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-12 h-12 rounded-lg overflow-hidden border-2 border-primary/30 shadow-[0_0_15px_rgba(56,189,248,0.3)] hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transition-all">
+                        <div className="w-12 h-12 rounded-lg overflow-hidden border-2 border-primary/30 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] transition-all">
                             <img
-                                src="/Portfolio2/images/logo-photo.png"
+                                src="/images/logo-photo.png"
                                 alt="Prathmesh Barapatre"
                                 className="w-full h-full object-cover"
                                 onError={(e) => {
