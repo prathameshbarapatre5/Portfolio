@@ -37,11 +37,11 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-11 h-11 rounded-xl bg-[#0a0a0a] border border-gray-700/50 flex items-center justify-center p-2 group-hover:border-primary/40 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all">
+                    <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-300 dark:border-gray-700 group-hover:border-primary dark:group-hover:border-primary transition-all">
                         <img
                             src={`${process.env.NODE_ENV === 'production' ? '/Portfolio' : ''}/images/logo-photo.png`}
                             alt="Logo"
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-cover"
                         />
                     </div>
                     <span className="hidden sm:block font-bold text-lg text-dark dark:text-light">Prathmesh</span>
