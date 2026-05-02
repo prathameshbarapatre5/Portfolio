@@ -101,7 +101,7 @@ export default function Home() {
                             <div className="absolute -inset-4 bg-white/5 rounded-2xl blur-2xl"></div>
                             <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/20">
                                 <img
-                                    src="/Portfolio2/images/home-photo.jpg"
+                                    src="/Portfolio/images/home-photo.jpg"
                                     alt="Prathmesh Barapatre"
                                     className="w-full h-auto"
                                     onError={(e) => {

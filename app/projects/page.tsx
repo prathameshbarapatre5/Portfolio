@@ -288,11 +288,11 @@ const Projects = () => {
                         />
                         <Project
                             type="Web Development"
-                            title="Portfolio2 - Monochrome"
+                            title="Portfolio - Monochrome"
                             summary="Minimalist monochrome portfolio with glassmorphism effects and pure black & white space aesthetic."
                             icon="⚫"
-                            link="https://github.com/prathameshbarapatre5/Portfolio2"
-                            github="https://github.com/prathameshbarapatre5/Portfolio2"
+                            link="https://github.com/prathameshbarapatre5/Portfolio"
+                            github="https://github.com/prathameshbarapatre5/Portfolio"
                             tags={["Next.js", "Glassmorphism"]}
                         />
                     </div>

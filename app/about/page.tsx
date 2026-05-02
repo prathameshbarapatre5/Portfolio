@@ -153,7 +153,7 @@ const About = () => {
                             <div className="absolute -inset-4 bg-white/5 rounded-3xl blur-2xl"></div>
                             <div className='relative glass p-2 rounded-3xl neon-border overflow-hidden'>
                                 <img
-                                    src="/Portfolio2/images/about-photo.jpeg"
+                                    src="/Portfolio/images/about-photo.jpeg"
                                     alt="Prathmesh Barapatre"
                                     className='w-full h-auto rounded-2xl'
                                     onError={(e) => {

@@ -1,4 +1,4 @@
-# Portfolio2 - Clean Project Structure
+# Portfolio - Clean Project Structure
 
 A minimalist monochrome portfolio for a Robotics Engineer specializing in space exploration.
 
@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## 📁 Project Structure
 
 ```
-Portfolio2/
+Portfolio/
 ├── .git/                    # Git repository
 ├── .github/
 │   └── workflows/
@@ -110,16 +110,16 @@ Portfolio2/
 
 Automatically deploys to GitHub Pages via GitHub Actions when you push to `main` branch.
 
-**Live URL**: `https://prathameshbarapatre5.github.io/Portfolio2/`
+**Live URL**: `https://prathameshbarapatre5.github.io/Portfolio/`
 
 ## 📦 Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/prathameshbarapatre5/Portfolio2.git
+git clone https://github.com/prathameshbarapatre5/Portfolio.git
 
 # Navigate to folder
-cd Portfolio2
+cd Portfolio
 
 # Install dependencies
 npm install

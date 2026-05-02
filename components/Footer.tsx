@@ -14,7 +14,7 @@ const Footer = () => {
                         <div className='flex items-center gap-2'>
                             <div className='w-10 h-10 rounded-lg overflow-hidden border border-white/20'>
                                 <img
-                                    src="/Portfolio2/images/logo-photo.png"
+                                    src="/Portfolio/images/logo-photo.png"
                                     alt="Logo"
                                     className='w-full h-full object-cover'
                                     onError={(e) => {
