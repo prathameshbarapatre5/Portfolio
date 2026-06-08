@@ -71,7 +71,7 @@ const FeaturedProject = ({ type, title, summary, icon, link, github, tags }: any
                                 href={link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className='inline-flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg'
+                                className='inline-flex items-center gap-2 px-6 py-2.5 bg-white text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] rounded-lg font-semibold transition-all'
                             >
                                 View Project
                                 <ExternalLink size={18} />
@@ -133,7 +133,7 @@ const Project = ({ title, type, icon, link, github, summary, tags, stars }: any)
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className='text-sm font-semibold text-primary dark:text-primaryDark hover:underline'
+                            className='text-sm font-semibold text-white hover:underline'
                         >
                             View Project →
                         </Link>
