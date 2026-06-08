@@ -52,6 +52,7 @@ const Navbar = () => {
                     <CustomLink href="/" title="Home" />
                     <CustomLink href="/about" title="About" />
                     <CustomLink href="/projects" title="Projects" />
+                    <CustomLink href="/designs" title="Designs" />
                     <CustomLink href="/publications" title="Publications" />
                     <CustomLink href="/articles" title="Articles" />
                 </nav>
@@ -104,6 +105,7 @@ const Navbar = () => {
                             <Link href="/" onClick={() => setIsOpen(false)} className="text-lg font-medium my-3">Home</Link>
                             <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium my-3">About</Link>
                             <Link href="/projects" onClick={() => setIsOpen(false)} className="text-lg font-medium my-3">Projects</Link>
+                            <Link href="/designs" onClick={() => setIsOpen(false)} className="text-lg font-medium my-3">Designs</Link>
                             <Link href="/publications" onClick={() => setIsOpen(false)} className="text-lg font-medium my-3">Publications</Link>
                             <Link href="/articles" onClick={() => setIsOpen(false)} className="text-lg font-medium my-3">Articles</Link>
 
