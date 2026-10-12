@@ -61,7 +61,7 @@ export default function Home() {
 
                         <div className='flex flex-wrap items-center gap-4 pt-4'>
                             <Link
-                                href="https://drive.google.com/drive/folders/1ppEIIGlAdfkekqMEmcPxGLs-OogKoGLN?usp=sharing"
+                                href="https://drive.google.com/file/d/1UYtFGYJ5PeoDPQmqAXmmgFycHgr7IgrG/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group inline-flex items-center gap-2 bg-white text-black hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] px-6 py-3 rounded-lg font-semibold transition-all"
