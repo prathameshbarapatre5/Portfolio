@@ -17,6 +17,15 @@ const itemVariants = {
 const Publications = () => {
     const publications = [
         {
+            title: "Decentralized Network for Coordinated Lunar Robotic Activity",
+            conference: "IAC 2026",
+            year: "2026",
+            type: "Paper",
+            description: "Proposes a decentralized coordination framework for multi-robot lunar surface operations, enabling resilient task allocation and communication without reliance on Earth-based control.",
+            link: "https://dl.iafastro.directory/event/IAC-2026/paper/105770/",
+            featured: true
+        },
+        {
             title: "Smart Transportation for Terrestrial Flooding and Lunar Search and Rescue",
             conference: "75th IAC",
             year: "2024",
@@ -216,9 +225,9 @@ const Publications = () => {
                     className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-20'
                 >
                     {[
-                        { value: "6", label: "Conference Papers" },
+                        { value: "7", label: "Conference Papers" },
                         { value: "2", label: "Public Talks" },
-                        { value: "3", label: "Premier Conferences" }
+                        { value: "4", label: "Premier Conferences" }
                     ].map((stat, i) => (
                         <div key={i} className='glass p-8 rounded-2xl neon-border text-center hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all'>
                             <div className='text-5xl font-bold text-white mb-2'>{stat.value}</div>

@@ -31,10 +31,18 @@ export default function Home() {
                 >
                     {/* Text Content */}
                     <motion.div variants={itemVariants} className='flex flex-col space-y-6 order-2 lg:order-1'>
-                        <div className="inline-block">
+                        <div className="flex flex-wrap gap-3">
                             <span className="px-4 py-2 glass rounded-full text-sm font-medium border border-white/20">
                                 Robotics Engineer
                             </span>
+                            <Link
+                                href="https://nss.org/meet-the-inaugural-nss-30-under-30-class-of-2026/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-4 py-2 glass rounded-full text-sm font-medium border border-white/40 text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all"
+                            >
+                                🏆 NSS 30 Under 30 — Class of 2026
+                            </Link>
                         </div>
 
                         <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight'>
