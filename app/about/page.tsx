@@ -263,6 +263,99 @@ const About = () => {
                         ))}
                     </div>
                 </motion.div>
+
+                {/* Honors & Awards */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className='mt-32'
+                >
+                    <h2 className='text-4xl font-bold text-center mb-4 text-white'>
+                        Honors & <span className='drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]'>Awards</span>
+                    </h2>
+                    <p className='text-center text-white/40 mb-12'>Recognition across space, engineering, and leadership</p>
+
+                    {/* Featured */}
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
+                        {[
+                            {
+                                title: "NSS 30 Under 30",
+                                subtitle: "Inaugural Class of 2026",
+                                issuer: "National Space Society",
+                                date: "Oct 2026",
+                                link: "https://nss.org/meet-the-inaugural-nss-30-under-30-class-of-2026/"
+                            },
+                            {
+                                title: "Claire McMurry Chapter Advocate of the Year",
+                                subtitle: "ISDC 2025",
+                                issuer: "National Space Society",
+                                date: "Jun 2025",
+                                link: null
+                            },
+                            {
+                                title: "Dave Dunlop International Chapter Award",
+                                subtitle: "ISDC 2025",
+                                issuer: "National Space Society",
+                                date: "Jun 2025",
+                                link: null
+                            }
+                        ].map((award, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                viewport={{ once: true }}
+                                className='glass p-6 rounded-2xl neon-border hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all text-center'
+                            >
+                                <div className='text-3xl mb-3'>🏆</div>
+                                <h3 className='text-lg font-bold text-white mb-1'>{award.title}</h3>
+                                <div className='text-sm text-white/50 mb-3'>{award.subtitle}</div>
+                                <div className='text-xs text-white/40 mb-1'>{award.issuer}</div>
+                                <div className='text-xs text-secondary'>{award.date}</div>
+                                {award.link && (
+                                    <a
+                                        href={award.link}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className='mt-4 inline-flex items-center gap-1 text-xs text-white/60 hover:text-white border border-white/20 hover:border-white/40 px-3 py-1.5 rounded-lg transition-all'
+                                    >
+                                        View ↗
+                                    </a>
+                                )}
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Competition & Academic */}
+                    <div className='space-y-3 max-w-4xl mx-auto'>
+                        {[
+                            { title: "Excellence Chapter Award", issuer: "National Space Society", date: "May 2024", badge: "🥇" },
+                            { title: "Special Merit Outstanding International Chapter Award", issuer: "National Space Society", date: "May 2023", badge: "🥇" },
+                            { title: "3rd Place — Electrifying Transportation", issuer: "IIT Bombay Techfest", date: "Feb 2022", badge: "🥉" },
+                            { title: "5th Place (Top 22) — Start-a-thon 3.0", issuer: "SP-TBI", date: "Mar 2022", badge: "🎖️" },
+                            { title: "2nd Place — AVALON National Level Project Competition", issuer: "Terna Engineering College / L&T", date: "Mar 2018", badge: "🥈" }
+                        ].map((award, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                viewport={{ once: true }}
+                                className='glass px-6 py-4 rounded-xl neon-border hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all flex items-center gap-4'
+                            >
+                                <span className='text-xl flex-shrink-0'>{award.badge}</span>
+                                <div className='flex-1 min-w-0'>
+                                    <div className='text-white font-semibold text-sm'>{award.title}</div>
+                                    <div className='text-white/40 text-xs mt-0.5'>{award.issuer}</div>
+                                </div>
+                                <div className='text-xs text-secondary flex-shrink-0'>{award.date}</div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
+
             </div>
         </main>
     )
