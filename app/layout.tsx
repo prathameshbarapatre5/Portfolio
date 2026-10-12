@@ -13,6 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
     title: 'Prathmesh Barapatre | Robotics Engineer',
     description: 'Robotics Engineer specializing in space exploration, autonomous systems, and cutting-edge technology.',
+    icons: {
+        icon: '/Portfolio/images/logo-photo.png',
+        apple: '/Portfolio/images/logo-photo.png',
+    },
 }
 
 export default function RootLayout({
